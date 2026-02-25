@@ -32,6 +32,9 @@ function App() {
       {/* Why You Need DZ-Ghost */}
       <WhyNeedSection lang={lang} />
 
+      {/* Social Proof Graph immediately after the problem */}
+      <SocialProof lang={lang} />
+
       {/* Intro Sections */}
       <UsVsThem lang={lang} />
       <DashboardShowcase lang={lang} />
@@ -70,8 +73,7 @@ function App() {
       {/* Final CTA */}
       <CTABanner lang={lang} />
 
-      {/* Social Proof Graph */}
-      <SocialProof lang={lang} />
+      {/* Social Proof moved up */}
       <SpeedInsights />
     </Layout>
   );

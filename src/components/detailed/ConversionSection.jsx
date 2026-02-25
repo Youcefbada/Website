@@ -10,47 +10,39 @@ const ConversionSection = ({ lang }) => {
 
     return (
         <section className="py-24 relative border-b border-white/5 bg-white/[0.02]">
-            <div className="container max-w-[80%] mx-auto px-6">
-                <div className="flex flex-col md:flex-row-reverse gap-16 items-start">
-                    {/* Header */}
-                    <div className="md:w-1/3 sticky top-24">
+            <div className="container max-w-[85%] mx-auto px-6">
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
+
+                    {/* Image Column (Left) */}
+                    <div className="aspect-video w-full rounded-2xl bg-[#14161f] border border-white/10 shadow-2xl flex items-center justify-center text-gray-500 relative overflow-hidden group order-last md:order-first">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span className="font-medium">UI Mockup: {t.title}</span>
+                    </div>
+
+                    {/* Text Column (Right) */}
+                    <div>
                         <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
                             <Zap size={32} className="text-primary" />
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
                             {t.title}
                         </h2>
-                        <div className="h-1 w-20 bg-primary rounded-full"></div>
+                        <ul className="space-y-6">
+                            {t.items.map((item, i) => {
+                                const Icon = iconMap[i] || Zap;
+                                return (
+                                    <li key={i} className="flex items-start gap-4">
+                                        <Icon size={20} className="text-primary mt-1 shrink-0" />
+                                        <div>
+                                            <h4 className="text-white font-bold">{item.title}</h4>
+                                            <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
+                                        </div>
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </div>
 
-                    {/* List */}
-                    <div className="md:w-2/3 grid gap-8">
-                        {t.items.map((item, i) => {
-                            const Icon = iconMap[i] || Zap;
-                            return (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="bg-bg-dark border border-white/10 p-8 rounded-2xl hover:border-primary/30 transition-colors group"
-                                >
-                                    <div className="flex items-start gap-6">
-                                        <div className="p-3 rounded-lg bg-bg-deep border border-white/5 text-primary group-hover:shadow-[0_0_15px_#B042FF] transition-all">
-                                            <Icon size={24} />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                                            <p className="text-gray-400 leading-relaxed">
-                                                {item.desc}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
                 </div>
             </div>
         </section>

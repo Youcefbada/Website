@@ -168,24 +168,80 @@ const CheckoutFeaturesSection = ({ lang }) => {
                     </motion.p>
                 </div>
 
-                {/* Features Grid */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                    {content.features.map((feature, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.05 }}
-                            className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
-                        >
-                            <div className={`w-12 h-12 rounded-xl ${colorClasses[feature.color]} border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                                <feature.icon size={24} />
-                            </div>
-                            <h3 className="text-white font-bold mb-2 text-sm sm:text-base">{feature.title}</h3>
-                            <p className="text-gray-500 text-xs sm:text-sm">{feature.desc}</p>
-                        </motion.div>
-                    ))}
+                {/* BENTO GRID */}
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-[250px]">
+                    {content.features.map((feature, i) => {
+                        let colSpan = 'md:col-span-1';
+                        let rowSpan = 'md:row-span-1';
+
+                        // Create asymmetric layout
+                        if (i === 0) { colSpan = 'md:col-span-2 lg:col-span-2'; rowSpan = 'md:row-span-2 text-center'; }
+                        else if (i === 5) { colSpan = 'md:col-span-2 lg:col-span-2'; rowSpan = 'md:row-span-1'; }
+
+                        const isLarge = i === 0 || i === 5;
+
+                        return (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.05 }}
+                                className={`p-6 sm:p-8 rounded-[2rem] bg-[#0A0A0A] border border-white/5 hover:border-${feature.color}/30 transition-all group relative overflow-hidden flex flex-col justify-between ${colSpan} ${rowSpan}`}
+                            >
+                                <div className={`absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                                <div className="relative z-10 flex flex-col h-full">
+                                    <div className={`flex flex-col ${i === 0 ? 'items-center' : 'items-start'}`}>
+                                        <div className={`w-12 h-12 rounded-2xl ${colorClasses[feature.color]} flex items-center justify-center mb-6 border group-hover:scale-110 transition-transform`}>
+                                            <feature.icon size={24} />
+                                        </div>
+                                        <h3 className="text-white font-bold mb-2 text-lg sm:text-xl">{feature.title}</h3>
+                                        <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
+                                    </div>
+
+                                    {isLarge && (
+                                        <div className="mt-8 flex-1 w-full rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-center relative overflow-hidden shadow-inner min-h-[100px] p-6">
+                                            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+
+                                            {i === 0 ? (
+                                                <div className="relative z-10 bg-[#14161f] border border-gray-800 rounded-xl w-full max-w-sm mx-auto overflow-hidden shadow-2xl flex flex-col scale-[0.95] sm:scale-100 origin-bottom">
+                                                    <div className="bg-gray-900 px-4 py-3 border-b border-gray-800 flex items-center gap-2">
+                                                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                                                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                                                        <span className="text-xs text-gray-500 ml-2 font-mono">checkout-rapide.php</span>
+                                                    </div>
+
+                                                    <div className="p-5 space-y-4 text-left">
+                                                        <div className="grid grid-cols-2 gap-3">
+                                                            <div className="h-10 bg-gray-800/50 rounded-lg border border-gray-700/50 flex items-center px-3 group">
+                                                                <span className="text-gray-500 text-sm group-hover:text-purple-400 transition">Nom Complet</span>
+                                                            </div>
+                                                            <div className="h-10 bg-gray-800/50 rounded-lg border border-gray-700/50 flex items-center px-3 group">
+                                                                <span className="text-gray-500 text-sm group-hover:text-purple-400 transition">Téléphone</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="h-10 bg-gray-800/50 rounded-lg border border-gray-700/50 flex items-center justify-between px-3 cursor-pointer">
+                                                            <span className="text-gray-300 text-sm">16 - Alger</span>
+                                                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                                        </div>
+
+                                                        <div className="mt-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 p-3 rounded-lg flex justify-center items-center cursor-pointer shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all">
+                                                            <span className="text-white font-bold text-sm tracking-wide">CONFIRMER LA COMMANDE</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <span className="relative z-10 text-xs text-white/40">Mini UI: {feature.title}</span>
+                                            )}
+
+                                        </div>
+                                    )}
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

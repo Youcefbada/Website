@@ -91,22 +91,90 @@ const AdminFeaturesSection = ({ lang }) => {
                     </motion.p>
                 </div>
 
-                {/* Features Grid */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                    {content.features.map((feature, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.05 }}
-                            className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-500/30 hover:bg-white/10 transition-all group"
-                        >
-                            <feature.icon size={24} className="text-blue-400 mb-3 group-hover:scale-110 transition-transform" />
-                            <h3 className="text-white font-bold mb-2 text-sm sm:text-base">{feature.title}</h3>
-                            <p className="text-gray-500 text-xs sm:text-sm">{feature.desc}</p>
-                        </motion.div>
-                    ))}
+                {/* BENTO GRID */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6 auto-rows-[250px]">
+                    {content.features.map((feature, i) => {
+                        let colSpan = 'md:col-span-1';
+                        let rowSpan = 'md:row-span-1';
+
+                        // Create asymmetric layout
+                        if (i === 0) { colSpan = 'md:col-span-2'; rowSpan = 'md:row-span-2'; }
+                        else if (i === 3 || i === 8) { colSpan = 'md:col-span-2'; rowSpan = 'md:row-span-1'; }
+
+                        const isLarge = i === 0 || i === 3 || i === 8;
+
+                        return (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.05 }}
+                                className={`p-6 sm:p-8 rounded-[2rem] bg-[#0A0A0A] border border-white/5 hover:border-blue-500/30 transition-all group relative overflow-hidden flex flex-col justify-between ${colSpan} ${rowSpan}`}
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="relative z-10 flex flex-col h-full">
+                                    <div>
+                                        <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
+                                            <feature.icon size={24} className="text-blue-400" />
+                                        </div>
+                                        <h3 className="text-white font-bold mb-2 text-lg sm:text-xl">{feature.title}</h3>
+                                        <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
+                                    </div>
+
+                                    {isLarge && (
+                                        <div className="mt-8 flex-1 w-full rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-center relative overflow-hidden shadow-inner min-h-[100px] p-6">
+                                            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+
+                                            {i === 0 ? (
+                                                <div className="relative w-full max-w-sm mx-auto group perspective-1000 z-10 mt-auto">
+                                                    <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                                                    <div className="relative bg-[#0f1117] border border-white/10 p-6 rounded-2xl shadow-2xl transform transition-transform duration-500 group-hover:scale-[1.02]">
+                                                        <div className="flex justify-between items-center mb-6">
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center border border-purple-500/30">
+                                                                    <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                                                </div>
+                                                                <div>
+                                                                    <p className="text-xs text-gray-400 font-medium">Chiffre d'Affaires</p>
+                                                                    <p className="text-white font-bold text-lg">245,500 DA</p>
+                                                                </div>
+                                                            </div>
+                                                            <div className="bg-green-500/10 border border-green-500/20 px-2 py-1 rounded text-green-400 text-xs font-bold flex items-center gap-1 animate-pulse">
+                                                                <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span> Live
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="space-y-3">
+                                                            <div className="flex justify-between items-center p-2 rounded-lg hover:bg-white/5 transition">
+                                                                <div className="flex items-center gap-2">
+                                                                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                                                                    <p className="text-sm text-gray-300">#ORD-9921</p>
+                                                                </div>
+                                                                <p className="text-xs text-gray-500">Alger</p>
+                                                                <p className="text-sm font-semibold text-white">4,500 DA</p>
+                                                            </div>
+                                                            <div className="flex justify-between items-center p-2 rounded-lg hover:bg-white/5 transition">
+                                                                <div className="flex items-center gap-2">
+                                                                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
+                                                                    <p className="text-sm text-gray-300">#ORD-9922</p>
+                                                                </div>
+                                                                <p className="text-xs text-gray-500">Oran</p>
+                                                                <p className="text-sm font-semibold text-white">7,200 DA</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <span className="relative z-10 text-xs text-blue-500/40">Mini UI: {feature.title}</span>
+                                            )}
+
+                                        </div>
+                                    )}
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

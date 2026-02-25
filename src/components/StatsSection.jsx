@@ -44,24 +44,24 @@ const StatsSection = ({ lang }) => {
     const t = content[lang].stats;
 
     return (
-        <section className="py-20 relative">
-            <div className="container max-w-[80%] mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">{t.title}</h2>
+        <section className="py-24 relative">
+            <div className="container max-w-[85%] mx-auto px-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-16">{t.title}</h2>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {t.items.map((stat, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.15 }}
-                            className="text-center p-8 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/10"
+                            className="bg-[#0f1117] text-center p-8 md:p-10 rounded-3xl border border-white/10 hover:border-primary hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center"
                         >
-                            <div className="text-4xl md:text-5xl font-bold text-primary mb-3">
+                            <div className="text-5xl md:text-6xl font-bold text-white mb-4 flex items-center justify-center tracking-tight">
                                 <AnimatedNumber value={stat.value} />
                             </div>
-                            <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
+                            <div className="text-gray-300 font-semibold text-sm md:text-base uppercase tracking-widest leading-snug">{stat.label}</div>
                         </motion.div>
                     ))}
                 </div>
