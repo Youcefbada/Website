@@ -174,12 +174,11 @@ const CheckoutFeaturesSection = ({ lang }) => {
                         let colSpan = 'md:col-span-1';
                         let rowSpan = 'md:row-span-1';
 
-                        // Create asymmetric layout
+                        // Asymmetric layout
                         if (i === 0) { colSpan = 'md:col-span-2 lg:col-span-2'; rowSpan = 'md:row-span-2 text-center'; }
                         else if (i === 5) { colSpan = 'md:col-span-2 lg:col-span-2'; rowSpan = 'md:row-span-1'; }
 
                         const isLarge = i === 0 || i === 5;
-
                         return (
                             <motion.div
                                 key={i}
@@ -235,7 +234,6 @@ const CheckoutFeaturesSection = ({ lang }) => {
                                             ) : (
                                                 <span className="relative z-10 text-xs text-white/40">Mini UI: {feature.title}</span>
                                             )}
-
                                         </div>
                                     )}
                                 </div>

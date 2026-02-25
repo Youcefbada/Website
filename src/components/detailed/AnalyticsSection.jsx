@@ -35,7 +35,6 @@ const AnalyticsSection = ({ lang }) => {
                             })}
                         </ul>
                     </div>
-
                     {/* Image Column (Right) */}
                     <div className="aspect-video w-full rounded-2xl bg-[#14161f] border border-white/10 shadow-2xl flex items-center justify-center text-gray-500 relative overflow-hidden group">
                         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -45,7 +44,7 @@ const AnalyticsSection = ({ lang }) => {
                                 <div className="bg-blue-500/20 p-1.5 rounded-md">
                                     <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" /></svg>
                                 </div>
-                                <span className="text-sm text-gray-300 font-semibold">Campagne: Chaussures_Hiver_DZ</span>
+                                <span className="text-sm text-gray-300 font-semibold">Campagne: Chaussures_Hiver</span>
                             </div>
 
                             <div className="grid grid-cols-3 gap-2 mb-4">
@@ -62,7 +61,6 @@ const AnalyticsSection = ({ lang }) => {
                                     <p className="text-xs text-white font-bold m-0">142</p>
                                 </div>
                             </div>
-
                             <div className="border-t border-gray-800 pt-3 flex justify-between items-center">
                                 <div className="flex items-center gap-2">
                                     <span className="relative flex h-2.5 w-2.5">
@@ -76,7 +74,6 @@ const AnalyticsSection = ({ lang }) => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

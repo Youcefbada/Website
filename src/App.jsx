@@ -32,9 +32,11 @@ function App() {
       {/* Why You Need DZ-Ghost */}
       <WhyNeedSection lang={lang} />
 
-      {/* Social Proof Graph immediately after the problem */}
-      <SocialProof lang={lang} />
+      {/* High-Value Asset Conversion Funnel Fix */}
+      <ConversionSection lang={lang} />
 
+      {/* Immediate High-Value Social Proof */}
+      <SocialProof lang={lang} />
       {/* Intro Sections */}
       <UsVsThem lang={lang} />
       <DashboardShowcase lang={lang} />
@@ -46,7 +48,6 @@ function App() {
       {/* Core Features (Detailed) */}
       <div id="features" className="space-y-0 bg-bg-deep relative z-10">
         <SecuritySection lang={lang} />
-        <ConversionSection lang={lang} />
         <AnalyticsSection lang={lang} />
         <LogisticsSection lang={lang} />
         <ToolsSection lang={lang} />

@@ -97,12 +97,11 @@ const AdminFeaturesSection = ({ lang }) => {
                         let colSpan = 'md:col-span-1';
                         let rowSpan = 'md:row-span-1';
 
-                        // Create asymmetric layout
+                        // Asymmetric layout
                         if (i === 0) { colSpan = 'md:col-span-2'; rowSpan = 'md:row-span-2'; }
                         else if (i === 3 || i === 8) { colSpan = 'md:col-span-2'; rowSpan = 'md:row-span-1'; }
 
                         const isLarge = i === 0 || i === 3 || i === 8;
-
                         return (
                             <motion.div
                                 key={i}
@@ -121,7 +120,6 @@ const AdminFeaturesSection = ({ lang }) => {
                                         <h3 className="text-white font-bold mb-2 text-lg sm:text-xl">{feature.title}</h3>
                                         <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
                                     </div>
-
                                     {isLarge && (
                                         <div className="mt-8 flex-1 w-full rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-center relative overflow-hidden shadow-inner min-h-[100px] p-6">
                                             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
@@ -168,7 +166,6 @@ const AdminFeaturesSection = ({ lang }) => {
                                             ) : (
                                                 <span className="relative z-10 text-xs text-blue-500/40">Mini UI: {feature.title}</span>
                                             )}
-
                                         </div>
                                     )}
                                 </div>

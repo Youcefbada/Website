@@ -12,7 +12,6 @@ const LogisticsSection = ({ lang }) => {
         <section className="py-24 relative border-b border-white/5 bg-white/[0.02]">
             <div className="container max-w-[85%] mx-auto px-6">
                 <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
-
                     {/* Image Column (Left) */}
                     <div className="aspect-video w-full rounded-2xl bg-[#14161f] border border-white/10 shadow-2xl flex items-center justify-center text-gray-500 relative overflow-hidden group order-last md:order-first">
                         <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -24,14 +23,12 @@ const LogisticsSection = ({ lang }) => {
                                 </div>
                                 <span className="text-xs text-gray-400 font-medium">New Order</span>
                             </div>
-
                             <div className="flex-1 w-full mx-4 flex items-center justify-center relative hidden sm:flex">
                                 <div className="w-full h-[2px] bg-gray-800 rounded overflow-hidden">
                                     <div className="w-1/2 h-full bg-purple-500 animate-[translateX_1.5s_ease-in-out_infinite]"></div>
                                 </div>
                                 <style>{`@keyframes translateX { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }`}</style>
                             </div>
-
                             <div className="flex flex-col gap-3 w-full sm:w-auto">
                                 <div className="flex items-center gap-3 bg-[#0a0c10] p-2 rounded-lg border border-gray-800 group-hover:border-orange-500/50 transition">
                                     <div className="w-8 h-8 rounded bg-orange-500/10 flex items-center justify-center shrink-0">
@@ -54,9 +51,7 @@ const LogisticsSection = ({ lang }) => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     {/* Text Column (Right) */}
                     <div>
                         <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6 border border-orange-500/20">
@@ -80,7 +75,6 @@ const LogisticsSection = ({ lang }) => {
                             })}
                         </ul>
                     </div>
-
                 </div>
             </div>
         </section>

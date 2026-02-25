@@ -35,7 +35,6 @@ const SecuritySection = ({ lang }) => {
                             })}
                         </ul>
                     </div>
-
                     {/* Image Column (Right) */}
                     <div className="aspect-video w-full rounded-2xl bg-[#14161f] border border-white/10 shadow-2xl flex items-center justify-center text-gray-500 relative overflow-hidden group">
                         <div className="absolute inset-0 bg-gradient-to-tr from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -51,7 +50,6 @@ const SecuritySection = ({ lang }) => {
                                     </div>
                                     <span className="bg-purple-500/20 text-purple-300 text-[10px] px-2 py-1 rounded-full border border-purple-500/30">Match 9.8/10</span>
                                 </div>
-
                                 <div className="bg-black border border-gray-800 rounded-lg p-3 font-mono text-[10px] space-y-2 h-32 overflow-hidden relative text-left">
                                     <p className="text-green-400">&gt; Event: Purchase (API) Sent successfully.</p>
                                     <p className="text-gray-500">&gt; Hashing user data (SHA-256)... done.</p>
@@ -61,7 +59,6 @@ const SecuritySection = ({ lang }) => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

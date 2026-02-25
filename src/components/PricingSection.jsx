@@ -78,6 +78,7 @@ const PricingSection = ({ lang }) => {
                     {t.title}
                 </motion.h2>
 
+                {/* Within PricingSection return: */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-stretch max-w-6xl mx-auto" style={{ perspective: '1000px' }}>
                     {t.plans.map((plan, i) => (
                         <PricingCard key={i} plan={plan} highlight={plan.highlight} special={plan.special} index={i} />
