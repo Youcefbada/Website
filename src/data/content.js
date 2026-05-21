@@ -6,145 +6,156 @@ export const content = {
             language: "AR",
         },
         hero: {
-            headline: "Ne Traquez Pas Juste. Dominez.",
-            subheadline: "Le Premier Pixel Server-Side & Moteur Logistique IA pour le COD Algérien.",
-            cta: "Obtenir l'Accès",
-            notifications: ["Achat Vérifié", "Bot Bloqué", "Lead Hybrid"],
+            eyebrow: "Le Plugin WordPress COD #1 en Algérie",
+            headline: "Le Plugin WordPress qui double les ventes COD pour l'Algérie",
+            subheadline: "Checkout ultra-rapide, confirmation d'équipe, 22 transporteurs et Server-Side CAPI — tout ce dont votre boutique WooCommerce a besoin, en un seul plugin.",
+            cta: "Démarrer Gratuitement",
+            ctaSecondary: "Voir la Démo",
+            trustBadges: ["500+ Boutiques Actives", "22 Transporteurs Intégrés", "Support FR/AR"],
         },
-        usVsThem: {
-            title: "Pourquoi bâtir sur un terrain que vous ne possédez pas ?",
-            rented: {
-                title: "Terre Louée (SaaS/Shopify)",
-                subtitle: "Vous êtes locataire.",
-                items: ["Loyer Mensuel Infini", "Risque de Données", "Anxiété de Bannissement"]
-            },
-            kingdom: {
-                title: "Votre Royaume (DZ-Ghost)",
-                subtitle: "Vous êtes le Roi.",
-                items: ["Paiement Unique", "Contrôle Data 100%", "Liberté Open Source"]
-            }
+        socialProofStrip: {
+            label: "Ils nous font confiance",
+            stats: [
+                { value: "500+", label: "Boutiques actives" },
+                { value: "2M+", label: "Commandes traitées" },
+                { value: "22", label: "Transporteurs intégrés" },
+                { value: "9/10", label: "Match Quality Score" },
+            ]
         },
-        dashboardShowcase: {
-            title: "Contrôle Total. Un Seul Écran.",
+        platformOverview: {
+            eyebrow: "Le Plugin Tout-en-Un",
+            title: "Tout ce dont vous avez besoin, en un seul plugin",
+            subtitle: "DZ-Ghost s'installe en 5 minutes sur WooCommerce et couvre l'intégralité du cycle de vie de vos commandes COD.",
+            pillars: [
+                {
+                    icon: "ShoppingCart",
+                    title: "Checkout & Conversion",
+                    desc: "One-page COD checkout, offres sur quantité, suivi WhatsApp hybride et récupération des paniers abandonnés.",
+                    color: "indigo"
+                },
+                {
+                    icon: "Truck",
+                    title: "Opérations & Logistique",
+                    desc: "Bureau de confirmation, 22 transporteurs algériens avec auto-tracking, et gestion complète du cycle de vie des commandes.",
+                    color: "violet"
+                },
+                {
+                    icon: "BarChart3",
+                    title: "Tracking & Intelligence",
+                    desc: "Server-Side CAPI (FB/TikTok/Snap), War Room dashboard, auditeur IA et carte interactive par wilaya.",
+                    color: "purple"
+                }
+            ]
         },
-        detailedFeatures: {
-            security: {
-                title: "Core Tracking & Sécurité (The Ghost Engine)",
-                items: [
-                    { title: "Tracking Server-Side (CAPI)", desc: "Contourne les bloqueurs (iOS 14+) en envoyant les événements Achat, Lead et AddToCart directement depuis votre serveur." },
-                    { title: "Qualité de Match 9/10", desc: "Chiffrement automatique (SHA256) des données client (Email, Tel, Ville) pour une précision maximale du pixel." },
-                    { title: "Bouclier Anti-Bot", desc: "Pare-feu actif filtrant le trafic par User-Agent et IP, empêchant les outils d'espionnage de polluer vos données." },
-                    { title: "Tracking WhatsApp Hybride", desc: "Traque un événement 'Lead' dès le clic sur le bouton WhatsApp, avant même l'ouverture du chat." }
-                ]
-            },
-            conversion: {
-                title: "Checkout & Conversion",
-                items: [
-                    { title: "Checkout One-Page COD", desc: "Remplace le checkout WooCommerce lent par un formulaire ultra-rapide injecté directement dans les pages produits." },
-                    { title: "Offres sur Quantité (AOV)", desc: "Sélecteur natif 'Achetez X Obtenez Y' (ex: Achetez 2 = -500DA) pour encourager les achats groupés." },
-                    { title: "Bouton Mobile Sticky", desc: "Bouton 'Acheter' fixé en bas de l'écran sur mobile pour augmenter le taux de clic." }
-                ]
-            },
-            analytics: {
-                title: "Intelligence & Analytics (IA)",
-                items: [
-                    { title: "The War Room", desc: "Tableau de bord centralisé visualisant KPI temps réel, taux de livraison et entonnoirs de vente." },
-                    { title: "Auditeur de Campagne IA", desc: "Algorithme intelligent analysant vos pubs (ROAS, CTR, Fréquence) avec recommandations SCALE ou KILL." },
-                    { title: "Carte de Performance Wilaya", desc: "Carte interactive montrant quelles wilayas ont les meilleurs taux de livraison vs retours." },
-                    { title: "Gestionnaire Finance", desc: "Calcule votre Profit Net temps réel en soustrayant coûts produits et dépenses pubs du revenu." }
-                ]
-            },
-            logistics: {
-                title: "Logistique & Opérations",
-                items: [
-                    { title: "Base de Données Algérienne", desc: "Listes déroulantes intégrées pour 58 Wilayas et Baladiyas, éliminant les erreurs d'adresse." },
-                    { title: "Logique d'Expédition Dynamique", desc: "Calcul automatique des prix différents pour 'À Domicile' vs 'Stop-Desk'." },
-                    { title: "Intégration Transporteurs", desc: "API directe avec Yalidine, ZR Express, Procolis, Ecotrack pour expédier en un clic." },
-                    { title: "Sync Google Sheets", desc: "Pousse instantanément les nouvelles commandes vers Google Sheets pour votre Call Center." },
-                    { title: "Gestion des Commandes", desc: "Interface simplifiée pour le traitement en masse et la synchronisation des statuts." }
-                ]
-            },
-            tools: {
-                title: "Outils & Usabilité",
-                items: [
-                    { title: "Créateur de Produit", desc: "Interface simplifiée pour créer des produits sans le désordre de WooCommerce standard." },
-                    { title: "Personnalisation Design", desc: "Onglet dédié pour personnaliser couleurs et layout du formulaire à votre image." }
-                ]
-            }
+        checkoutSection: {
+            eyebrow: "Checkout & Conversion",
+            title: "Un checkout COD qui convertit vraiment",
+            subtitle: "Remplacez le checkout WooCommerce lent par une expérience d'achat fluide, conçue pour le marché algérien.",
+            features: [
+                { title: "One-Page COD Checkout", desc: "Formulaire ultra-rapide injecté dans vos pages produits. 58 wilayas + communes en listes déroulantes intelligentes." },
+                { title: "Offres sur Quantité (AOV)", desc: "Sélecteur natif 'Achetez 2 = -500DA' pour augmenter la valeur moyenne des commandes automatiquement." },
+                { title: "Bouton Sticky Mobile", desc: "Bouton d'achat fixé en bas de l'écran sur mobile pour maximiser les clics et le taux de conversion." },
+                { title: "Récupération de Paniers", desc: "Suivi et relance automatique des clients qui n'ont pas finalisé leur commande." },
+                { title: "Commande via WhatsApp", desc: "Tracking hybride de l'événement Lead dès le clic WhatsApp, avant même l'ouverture du chat." },
+            ]
         },
-        techFlow: {
-            title: "Comment Le Fantôme Opère",
+        operationsSection: {
+            eyebrow: "Opérations & Logistique",
+            title: "De la confirmation à la livraison, automatisé",
+            subtitle: "Un bureau de confirmation complet pour vos équipes call center, connecté à 22 transporteurs algériens.",
+            features: [
+                { title: "Bureau de Confirmation", desc: "Interface dédiée pour les équipes call center avec rôles personnalisés, logs d'appels et workflow de confirmation." },
+                { title: "22 Transporteurs Algériens", desc: "API directe avec Yalidine, ZR Express, Procolis, Ecotrack et 18 autres. Expédiez en un clic." },
+                { title: "Auto-Tracking", desc: "Synchronisation automatique des statuts de livraison depuis les transporteurs vers votre tableau de bord." },
+                { title: "Cycle de Vie Complet", desc: "Nouvelle → Appel → Confirmée → Expédiée → Livrée. Chaque étape trackée et visible en temps réel." },
+                { title: "Sync Google Sheets", desc: "Pousse instantanément les nouvelles commandes vers votre spreadsheet pour votre call center." },
+            ]
+        },
+        intelligenceSection: {
+            eyebrow: "Tracking & Intelligence",
+            title: "La donnée au niveau auquel Facebook n'accède plus",
+            subtitle: "Server-Side CAPI qui contourne iOS 14+, avec analytics avancée et IA pour piloter vos campagnes.",
+            features: [
+                { title: "Server-Side CAPI", desc: "Envoie vos événements Facebook, TikTok et Snapchat directement depuis votre serveur. Contourne tous les bloqueurs et iOS 14+." },
+                { title: "Match Quality 9/10", desc: "Chiffrement SHA-256 automatique des données clients pour une précision de ciblage maximale." },
+                { title: "The War Room", desc: "Dashboard centralisé avec KPI temps réel, taux de livraison par wilaya et entonnoirs de vente complets." },
+                { title: "Auditeur de Campagne IA", desc: "Algorithme intelligent analysant ROAS, CTR et fréquence avec recommandations concrètes : SCALE ou KILL." },
+                { title: "Carte Interactive Wilaya", desc: "Visualisez les performances de livraison vs retours sur une carte interactive de l'Algérie." },
+            ]
+        },
+        securitySection: {
+            eyebrow: "Sécurité & Confiance",
+            title: "Fortifié contre les bots, les fraudes et les fuites",
+            items: [
+                { title: "Chiffrement AES-256", desc: "Toutes vos données et communications sont chiffrées au niveau militaire." },
+                { title: "Bouclier Anti-Bot", desc: "Pare-feu actif filtrant les bots par User-Agent et IP. Vos données restent propres." },
+                { title: "Validation Téléphone", desc: "Vérification en temps réel des numéros algériens pour éliminer les fausses commandes." },
+                { title: "Liste Noire Clients", desc: "Bloquez automatiquement les clients frauduleux basé sur l'historique et le comportement." },
+                { title: "Détection VPN/Proxy", desc: "Identifiez et filtrez le trafic artificiel provenant de VPNs et proxies." },
+                { title: "En-têtes CSP", desc: "Content Security Policy configurée automatiquement pour protéger votre vitrine." },
+            ]
+        },
+        stats: {
+            title: "Des résultats mesurables",
+            items: [
+                { value: "4x", label: "ROAS Moyen Après Installation" },
+                { value: "-32%", label: "Réduction du CPA" },
+                { value: "9/10", label: "Match Quality Score" },
+                { value: "22", label: "Transporteurs Intégrés" }
+            ]
+        },
+        testimonials: {
+            title: "Ce que disent nos clients",
+            items: [
+                { name: "Ahmed K.", role: "Vendeur COD — Alger", quote: "Avant DZ-Ghost, je perdais 40% de mon budget pub. Maintenant mon ROAS est passé de 1.2 à 4.5. C'est un autre monde." },
+                { name: "Sarah M.", role: "Agence E-commerce", quote: "On gère 15 boutiques avec la licence Escouade. Le temps gagné sur la logistique est incroyable." },
+                { name: "Youcef B.", role: "Dropshipper — Oran", quote: "L'intégration Yalidine seule vaut le prix. Un clic et c'est expédié. Plus d'erreurs manuelles." }
+            ]
+        },
+        howItWorks: {
+            eyebrow: "Comment ça fonctionne",
+            title: "Du client à la livraison, en 4 étapes",
             steps: [
-                { title: "Commande Client", desc: "L'utilisateur passe commande." },
-                { title: "Chiffrement SHA256", desc: "Sécurisation des données." },
-                { title: "Moteur Ghost", desc: "Contournement iOS 14 & AdBlockers." },
-                { title: "API Facebook", desc: "Transmission Server-to-Server 100%." },
+                { title: "Commande", desc: "Le client remplit le checkout one-page COD. Les données sont envoyées en Server-Side à vos pixels publicitaires." },
+                { title: "Confirmation", desc: "Votre équipe call center confirme la commande via le bureau de confirmation avec logs et statuts." },
+                { title: "Expédition", desc: "En un clic, la commande est envoyée au transporteur choisi. Le tracking est automatique." },
+                { title: "Livraison", desc: "Le statut se met à jour en temps réel. Analytics et profit net calculés automatiquement." },
             ],
         },
         pricing: {
-            title: "L'Investissement",
-            toggle: { yearly: "Annuel", lifetime: "À Vie" },
+            eyebrow: "Tarifs",
+            title: "Un investissement, pas un loyer",
+            subtitle: "Choisissez le plan adapté à la taille de votre opération.",
             plans: [
                 {
                     name: "Le Soldat",
                     price: "14,900 DA",
                     period: "/ an",
-                    features: ["1 Domaine", "Audit IA Complet", "Tracking Server-Side", "Support Standard"],
-                    cta: "Commencer la Mission",
+                    desc: "Idéal pour les vendeurs solo qui démarrent.",
+                    features: ["1 Domaine", "Checkout COD Complet", "Tracking Server-Side", "22 Transporteurs", "Support Standard"],
+                    cta: "Commencer",
                     highlight: false
                 },
                 {
                     name: "L'Escouade",
                     price: "59,000 DA",
                     period: "/ an",
-                    features: ["10 Domaines", "Support Prioritaire", "Marque Blanche", "Gestion Clients"],
-                    cta: "Équiper l'Escouade",
+                    desc: "Pour les agences et opérations multi-boutiques.",
+                    features: ["10 Domaines", "Support Prioritaire", "Marque Blanche", "Gestion Clients", "Accès Anticipé"],
+                    cta: "Choisir L'Escouade",
                     highlight: true,
                     tag: "Meilleure Valeur"
                 },
                 {
-                    name: "La Légende",
+                    name: "Le Royaume",
                     price: "45,000 DA",
                     period: "/ une fois",
-                    features: ["1 Domaine", "Mises à Jour à Vie", "Pas de Frais Récurrents"],
-                    cta: "Sécuriser l'Héritage",
+                    desc: "Payez une fois, utilisez à vie. Sans abonnement.",
+                    features: ["1 Domaine", "Mises à Jour à Vie", "Pas de Frais Récurrents", "Toutes les Fonctionnalités"],
+                    cta: "Paiement Unique",
                     highlight: false,
                     special: true
                 }
-            ]
-        },
-        socialProof: {
-            title: "De la Perte au ROAS x4",
-            stat1: "90% Qualité de Match",
-            stat2: "-30% Commandes Fake",
-        },
-        whyUs: {
-            title: "Pourquoi DZ-Ghost et Pas Les Autres ?",
-            subtitle: "La Différence Est Claire.",
-            items: [
-                { title: "Construit Pour l'Algérie", desc: "Pas un outil américain adapté. Conçu dès le départ pour le COD, les Wilayas et les transporteurs algériens.", icon: "flag" },
-                { title: "Vous Êtes Propriétaire", desc: "Installez sur votre serveur. Vos données, votre entreprise, votre liberté. Pas de dépendance SaaS.", icon: "key" },
-                { title: "Intelligence Intégrée", desc: "L'IA analyse vos campagnes et données automatiquement. Pas besoin d'être expert en marketing.", icon: "brain" },
-                { title: "Support Local", desc: "Équipe francophone/arabophone qui comprend le marché local et vos défis quotidiens.", icon: "headphones" },
-                { title: "Mises à Jour Constantes", desc: "Nous évoluons avec les changements de Facebook, iOS et les transporteurs. Vous restez toujours à jour.", icon: "refresh" },
-                { title: "Communauté Active", desc: "Rejoignez des centaines de vendeurs COD algériens qui partagent stratégies et bonnes pratiques.", icon: "users" }
-            ]
-        },
-        stats: {
-            title: "Les Chiffres Parlent",
-            items: [
-                { value: "500+", label: "Boutiques Actives" },
-                { value: "2M+", label: "Commandes Traitées" },
-                { value: "9/10", label: "Match Quality Score" },
-                { value: "4x", label: "ROAS Moyen Après Installation" }
-            ]
-        },
-        testimonials: {
-            title: "Ce Que Disent Nos Clients",
-            items: [
-                { name: "Ahmed K.", role: "Vendeur COD - Alger", quote: "Avant DZ-Ghost, je perdais 40% de mon budget pub. Maintenant mon ROAS est passé de 1.2 à 4.5. C'est un autre monde." },
-                { name: "Sarah M.", role: "Agence E-commerce", quote: "On gère 15 boutiques avec la licence Escouade. Le temps gagné sur la logistique est incroyable." },
-                { name: "Youcef B.", role: "Dropshipper - Oran", quote: "L'intégration Yalidine seule vaut le prix. Un clic et c'est expédié. Plus d'erreurs manuelles." }
             ]
         },
         faq: {
@@ -157,15 +168,49 @@ export const content = {
                 { q: "Et si Facebook change encore son API ?", a: "On met à jour le plugin à chaque changement. Vous recevez les updates automatiquement." }
             ]
         },
+        whySwitch: {
+            eyebrow: "Ce que vous perdez aujourd'hui",
+            headline: "Vos pixels perdent 60% de vos données. Voici ce que ça vous coûte vraiment.",
+            subtitle: "iOS 14+, les bloqueurs de pub et le checkout lent de WooCommerce font saigner votre budget pub en silence. Chaque jour sans DZ-Ghost, vous surenchérissez à l'aveugle.",
+            without: {
+                label: "Sans DZ-Ghost",
+                items: [
+                    { pain: "Pixel bloqué par iOS 14+ & ad blockers", impact: "60% de vos conversions ne remontent pas au pixel" },
+                    { pain: "Checkout WooCommerce natif et lent", impact: "Taux d'abandon > 70% sur mobile en Algérie" },
+                    { pain: "Gestion manuelle des transporteurs", impact: "Erreurs, retards et NDR entre 35 et 45%" },
+                    { pain: "Audiences mal qualifiées faute de données", impact: "CPA qui monte chaque semaine sans explication" },
+                    { pain: "Aucun outil pour le call center", impact: "Confirmations perdues et clients non rappelés" },
+                ]
+            },
+            with: {
+                label: "Avec DZ-Ghost",
+                items: [
+                    { fix: "Server-Side CAPI Facebook, TikTok & Snapchat", result: "100% des événements remontent — Match Quality 9/10" },
+                    { fix: "Checkout one-page optimisé COD", result: "Taux de conversion multiplié par 2.4 dès l'install" },
+                    { fix: "22 transporteurs connectés en API directe", result: "NDR < 20% avec auto-tracking complet" },
+                    { fix: "Données propres → ciblage précis", result: "CPA divisé par 2 en moyenne dans les 30 premiers jours" },
+                    { fix: "Bureau de confirmation intégré", result: "Call center 3x plus efficace avec workflow complet" },
+                ]
+            },
+            proof: "Les boutiques qui activent DZ-Ghost voient leur ROAS passer de 1.5x à 4x en moyenne dans les 30 premiers jours.",
+            cta: "Je veux arrêter de perdre de l'argent",
+            ctaNote: "Installation en 5 minutes · Compatible tous thèmes WordPress"
+        },
         ctaBanner: {
-            title: "Prêt à Dominer Votre Marché ?",
-            subtitle: "Rejoignez 500+ vendeurs COD qui ont fait le switch.",
+            title: "Prêt à transformer votre boutique COD ?",
+            subtitle: "Rejoignez 500+ vendeurs algériens qui ont multiplié leur ROAS par 4.",
             cta: "Commencer Maintenant",
-            secondary: "Voir la Démo"
+            secondary: "Voir la Démo",
+            trustItems: ["Installation en 5 minutes", "Support WhatsApp 24/7", "Satisfait ou Remboursé"]
         },
         footer: {
-            copyright: "© 2026 DZ-Ghost. La Machine de Guerre E-commerce.",
-            links: ["Documentation", "Support", "Tarifs"],
+            tagline: "Le plugin WordPress COD tout-en-un pour l'Algérie.",
+            copyright: "© 2026 DZ-Ghost. Tous droits réservés.",
+            links: {
+                product: { title: "Produit", items: ["Fonctionnalités", "Tarifs", "Documentation", "Changelog"] },
+                support: { title: "Support", items: ["Contact", "WhatsApp", "Email", "Statut"] },
+                legal: { title: "Légal", items: ["Politique de confidentialité", "Conditions d'utilisation"] }
+            }
         },
     },
     ar: {
@@ -175,166 +220,211 @@ export const content = {
             language: "FR",
         },
         hero: {
-            headline: "لا تكتفِ بالمشاهدة. سيطر على السوق.",
-            subheadline: "أول نظام تتبع Server-Side ومحرك لوجستي ذكي مصمم خصيصاً للتجارة الإلكترونية (COD) في الجزائر.",
-            cta: "ابدأ الهيمنة",
-            notifications: ["طلب مؤكد ✅", "تم حظر بوت 🤖", "عميل عالي الجودة 💎"],
+            eyebrow: "إضافة WordPress COD الأولى في الجزائر",
+            headline: "إضافة WordPress التي تضاعف مبيعات COD للجزائر",
+            subheadline: "نموذج دفع سريع، تأكيد طلبات بالفريق، 22 شركة شحن و Server-Side CAPI — كل ما تحتاجه في إضافة WooCommerce واحدة.",
+            cta: "ابدأ مجاناً",
+            ctaSecondary: "شاهد العرض",
+            trustBadges: ["+500 متجر نشط", "22 شركة شحن", "دعم بالعربية والفرنسية"],
         },
-        usVsThem: {
-            title: "لماذا تبني إمبراطوريتك على أرض لا تملكها؟",
-            rented: {
-                title: "أرض مستأجرة (منصات SaaS)",
-                subtitle: "أنت مجرد مستأجر.",
-                items: ["استنزاف شهري مستمر", "بياناتك مكشوفة للمنصة", "كابوس الحظر المفاجئ"]
-            },
-            kingdom: {
-                title: "مملكتك الخاصة (DZ-Ghost)",
-                subtitle: "أنت المالك والحاكم.",
-                items: ["استثمار لمرة واحدة فقط", "تحكم كامل في بياناتك", "حرية مطلقة"]
-            }
+        socialProofStrip: {
+            label: "يثقون بنا",
+            stats: [
+                { value: "+500", label: "متجر نشط" },
+                { value: "+2M", label: "طلب ناجح" },
+                { value: "22", label: "شركة شحن مدمجة" },
+                { value: "9/10", label: "جودة المطابقة" },
+            ]
         },
-        dashboardShowcase: {
-            title: "تحكم مطلق. واجهة واحدة.",
+        platformOverview: {
+            eyebrow: "الإضافة الشاملة",
+            title: "كل ما تحتاجه في إضافة واحدة",
+            subtitle: "يُثبَّت DZ-Ghost في 5 دقائق على WooCommerce ويغطي دورة حياة طلباتك بالكامل من الطلب حتى التسليم.",
+            pillars: [
+                {
+                    icon: "ShoppingCart",
+                    title: "الدفع والتحويل",
+                    desc: "نموذج COD سريع في صفحة واحدة، عروض الكميات، تتبع واتساب الهجين واسترداد السلات المتروكة.",
+                    color: "indigo"
+                },
+                {
+                    icon: "Truck",
+                    title: "العمليات واللوجستيات",
+                    desc: "مكتب تأكيد الطلبات، 22 شركة شحن جزائرية مع تتبع تلقائي وإدارة كاملة لدورة حياة الطلب.",
+                    color: "violet"
+                },
+                {
+                    icon: "BarChart3",
+                    title: "التتبع والذكاء",
+                    desc: "Server-Side CAPI لفيسبوك وتيك توك وسناب، لوحة War Room، مدقق IA وخريطة تفاعلية بالولايات.",
+                    color: "purple"
+                }
+            ]
         },
-        detailedFeatures: {
-            security: {
-                title: "محرك الشبح (The Ghost Engine)",
-                items: [
-                    { title: "تتبع Server-Side CAPI", desc: "اختراق حظر iOS 14+ عبر إرسال البيانات مباشرة من السيرفر، لضمان دقة لا تضاهى." },
-                    { title: "جودة مطابقة 9.5/10", desc: "تشفير عسكري (SHA256) لبيانات العملاء لرفع دقة استهداف فيسبوك." },
-                    { title: "الدرع المضاد للبوتات", desc: "حماية استباقية تحظر الروبوتات وأدوات التجسس قبل وصولها لمتجرك." },
-                    { title: "تتبع واتساب الهجين", desc: "رصد دقيق لحدث 'Lead' لحظة النقر، لضمان عدم ضياع أي عميل محتمل." }
-                ]
-            },
-            conversion: {
-                title: "أنظمة التحويل والدفع",
-                items: [
-                    { title: "نموذج دفع سريع (One-Page)", desc: "تجربة شراء انسيابية في صفحة واحدة تضاعف معدلات التحويل." },
-                    { title: "عروض زيادة السلة (Upsell)", desc: "نظام ذكي للعروض (اشتري X واحصل على Y) يرفع قيمة الطلب تلقائياً." },
-                    { title: "زر الشراء العائم", desc: "زر ثابت يلاحق العميل في الجوال لتحفيزه على إتمام الطلب." }
-                ]
-            },
-            analytics: {
-                title: "ذكاء الأعمال والتحليلات",
-                items: [
-                    { title: "غرفة العمليات المركزية", desc: "لوحة قيادة تعرض نبض مشروعك: المبيعات، الأرباح، ونسب التوصيل." },
-                    { title: "المستشار الإعلاني (AI)", desc: "خوارزمية تحلل أداء إعلاناتك وتنصحك: هل تزيد الميزانية أم توقف الحملة؟" },
-                    { title: "الخريطة الحرارية للولايات", desc: "رؤية واضحة لأداء كل ولاية: أين تبيع أكثر؟ وأين تخسر في التوصيل؟" },
-                    { title: "مدير الأرباح الصافية", desc: "حساب دقيق لصافي ربحك بعد خصم تكاليف السلعة والإعلانات." }
-                ]
-            },
-            logistics: {
-                title: "المنظومة اللوجستية",
-                items: [
-                    { title: "قاعدة بيانات 58 ولاية", desc: "قوائم دقيقة للولايات والبلديات تمنع أخطاء العناوين وتسهل التوصيل." },
-                    { title: "تسعير توصيل ديناميكي", desc: "حساب تكلفة الشحن تلقائياً بناءً على الولاية ونوع التوصيل (مكتب/منزل)." },
-                    { title: "ربط شركات الشحن", desc: "تكامل API فوري مع (Yalidine, ZR, Procolis) - أرسل الطلبات بنقرة زر." },
-                    { title: "المزامنة مع Google Sheets", desc: "ترحيل لحظي للطلبات لفرق التأكيد (Call Center) دون تدخل يدوي." },
-                    { title: "إدارة الطلبات الجماعية", desc: "تغيير حالات الطلبات وطباعة البوليصات لمئات الطلبات دفعة واحدة." }
-                ]
-            },
-            tools: {
-                title: "أدوات الإنتاجية",
-                items: [
-                    { title: "صانع المنتجات السريع", desc: "أضف منتجاتك في ثوانٍ مع واجهة مخصصة تركز على ما يهم فقط." },
-                    { title: "محرر الهوية البصرية", desc: "تحكم كامل في ألوان وتصميم صفحة الشراء لتعكس هوية علامتك." }
-                ]
-            }
+        checkoutSection: {
+            eyebrow: "الدفع والتحويل",
+            title: "نموذج COD يحول الزوار فعلاً",
+            subtitle: "استبدل checkout ووكومرس البطيء بتجربة شراء سلسة مصممة للسوق الجزائري.",
+            features: [
+                { title: "نموذج دفع One-Page COD", desc: "نموذج سريع جداً يُحقن في صفحات المنتجات. 58 ولاية وبلدياتها في قوائم منسدلة ذكية." },
+                { title: "عروض الكميات (AOV)", desc: "محدد 'اشتري 2 = خصم 500دج' لزيادة متوسط قيمة الطلب تلقائياً." },
+                { title: "زر شراء Sticky للجوال", desc: "زر شراء ثابت أسفل الشاشة على الجوال لتعظيم النقرات ومعدل التحويل." },
+                { title: "استرداد السلات المتروكة", desc: "تتبع وإعادة استهداف تلقائي للعملاء الذين لم يكملوا طلباتهم." },
+                { title: "طلب عبر واتساب", desc: "تتبع هجين لحدث Lead فور النقر على واتساب، قبل فتح المحادثة." },
+            ]
         },
-        techFlow: {
-            title: "آلية عمل النظام",
+        operationsSection: {
+            eyebrow: "العمليات واللوجستيات",
+            title: "من التأكيد إلى التسليم، بشكل تلقائي",
+            subtitle: "مكتب تأكيد متكامل لفرق call center، متصل بـ 22 شركة شحن جزائرية.",
+            features: [
+                { title: "مكتب التأكيد", desc: "واجهة مخصصة لفرق call center مع أدوار مخصصة، سجلات المكالمات وسير عمل التأكيد." },
+                { title: "22 شركة شحن جزائرية", desc: "API مباشرة مع Yalidine وZR Express وProcolis وEcotrack و18 أخرى. الشحن بنقرة زر." },
+                { title: "تتبع تلقائي", desc: "مزامنة تلقائية لحالات التوصيل من شركات الشحن إلى لوحة التحكم." },
+                { title: "دورة حياة كاملة للطلب", desc: "جديد → مكالمة → مؤكد → مشحون → مسلَّم. كل خطوة مُتتبَّعة وظاهرة في الوقت الفعلي." },
+                { title: "مزامنة Google Sheets", desc: "إرسال الطلبات الجديدة فوراً إلى جدول البيانات لفريق call center." },
+            ]
+        },
+        intelligenceSection: {
+            eyebrow: "التتبع والذكاء",
+            title: "البيانات بمستوى لم يعد يصله فيسبوك",
+            subtitle: "Server-Side CAPI يتجاوز iOS 14+، مع تحليلات متقدمة وIA لقيادة حملاتك.",
+            features: [
+                { title: "Server-Side CAPI", desc: "إرسال أحداث فيسبوك وتيك توك وسناب مباشرة من السيرفر. يتجاوز كل الحجب وiOS 14+." },
+                { title: "جودة مطابقة 9/10", desc: "تشفير SHA-256 تلقائي لبيانات العملاء لدقة استهداف قصوى." },
+                { title: "غرفة العمليات (War Room)", desc: "لوحة تحكم مركزية مع KPI في الوقت الفعلي، نسب التوصيل بالولاية وقمع المبيعات." },
+                { title: "مدقق الحملات بالذكاء الاصطناعي", desc: "خوارزمية تحلل ROAS والـCTR والتكرار مع توصيات عملية: SCALE أو KILL." },
+                { title: "خريطة الولايات التفاعلية", desc: "شاهد أداء التوصيل مقابل المرتجعات على خريطة تفاعلية للجزائر." },
+            ]
+        },
+        securitySection: {
+            eyebrow: "الأمان والحماية",
+            title: "محصَّن ضد البوتات والاحتيال والتسريبات",
+            items: [
+                { title: "تشفير AES-256", desc: "جميع بياناتك واتصالاتك مشفرة بمستوى عسكري." },
+                { title: "درع مضاد للبوتات", desc: "جدار حماية نشط يصفي البوتات عبر User-Agent والـIP. بياناتك تبقى نظيفة." },
+                { title: "التحقق من الهاتف", desc: "التحقق الفوري من أرقام الهاتف الجزائرية للقضاء على الطلبات الوهمية." },
+                { title: "القائمة السوداء للعملاء", desc: "حظر تلقائي للعملاء المحتالين بناءً على التاريخ والسلوك." },
+                { title: "كشف VPN والبروكسي", desc: "تحديد وتصفية الزيارات الاصطناعية من VPNs والبروكسيات." },
+                { title: "ترويسات CSP", desc: "Content Security Policy مهيأة تلقائياً لحماية متجرك." },
+            ]
+        },
+        stats: {
+            title: "نتائج قابلة للقياس",
+            items: [
+                { value: "4x", label: "متوسط عائد ROAS بعد التثبيت" },
+                { value: "-32%", label: "انخفاض تكلفة الاقتناء CPA" },
+                { value: "9/10", label: "جودة المطابقة" },
+                { value: "22", label: "شركة شحن مدمجة" }
+            ]
+        },
+        testimonials: {
+            title: "ماذا يقول عملاؤنا",
+            items: [
+                { name: "أحمد ك.", role: "تاجر COD — الجزائر", quote: "كنت أخسر 40% من ميزانيتي بسبب التتبع السيء. مع DZ-Ghost، تحول الـ ROAS من 1.5 إلى 4.5 خلال أسبوع." },
+                { name: "سارة م.", role: "وكالة تجارة إلكترونية", quote: "إدارة 15 متجر كانت كابوساً. الآن مع لوحة Escouade، كل شيء منظم واللوجستيات أوتوماتيكية." },
+                { name: "يوسف ب.", role: "دروب شيبر — وهران", quote: "ربط ياليدين وحده يوفر علي ساعتين يومياً. النظام يستحق كل دينار." }
+            ]
+        },
+        howItWorks: {
+            eyebrow: "كيف يعمل",
+            title: "من العميل إلى التسليم في 4 خطوات",
             steps: [
-                { title: "استلام الطلب", desc: "تجربة سلسة للعميل." },
-                { title: "تشفير البيانات", desc: "حماية قصوى SHA256." },
-                { title: "محرك الشبح", desc: "اختراق الحجب والتتبع." },
-                { title: "إرسال لفيسبوك", desc: "تزامن سيرفر فوري." },
+                { title: "الطلب", desc: "يملأ العميل نموذج الدفع السريع COD. تُرسَل البيانات Server-Side لبكسلات إعلاناتك." },
+                { title: "التأكيد", desc: "يؤكد فريق call center الطلب عبر مكتب التأكيد مع السجلات والحالات." },
+                { title: "الشحن", desc: "بنقرة زر، يُرسَل الطلب لشركة الشحن المختارة. التتبع تلقائي." },
+                { title: "التسليم", desc: "يتحدث الحالة في الوقت الفعلي. التحليلات وصافي الربح محسوب تلقائياً." },
             ],
         },
         pricing: {
-            title: "خيارات الاستثمار",
-            toggle: { yearly: "سنوي", lifetime: "مدى الحياة" },
+            eyebrow: "الأسعار",
+            title: "استثمار وليس إيجاراً",
+            subtitle: "اختر الباقة المناسبة لحجم عملياتك.",
             plans: [
                 {
                     name: "الجندي",
                     price: "14,900 دج",
                     period: "/ سنوياً",
-                    features: ["نطاق واحد", "تدقيق إعلاني AI", "تتبع Server-Side", "دعم فني أساسي"],
-                    cta: "ابدأ رحلتك",
+                    desc: "مثالي للبائعين المنفردين المبتدئين.",
+                    features: ["نطاق واحد", "Checkout COD كامل", "تتبع Server-Side", "22 شركة شحن", "دعم أساسي"],
+                    cta: "ابدأ الآن",
                     highlight: false
                 },
                 {
-                    name: "الفرقة (Squad)",
+                    name: "الفرقة",
                     price: "59,000 دج",
                     period: "/ سنوياً",
-                    features: ["10 نطاقات", "دعم فني VIP", "إزالة الشعار", "نظام إدارة الفريق"],
-                    cta: "جهز فريقك",
+                    desc: "للوكالات والعمليات متعددة المتاجر.",
+                    features: ["10 نطاقات", "دعم VIP", "إزالة الشعار", "إدارة العملاء", "وصول مبكر"],
+                    cta: "اختر الفرقة",
                     highlight: true,
                     tag: "الأكثر طلباً"
                 },
                 {
-                    name: "الأسطورة",
+                    name: "المملكة",
                     price: "45,000 دج",
-                    period: "/ تدفع مرة واحدة",
-                    features: ["نطاق واحد", "تحديثات مجانية للأبد", "بدون اشتراك سنوي"],
-                    cta: "امتلك النظام",
+                    period: "/ مرة واحدة",
+                    desc: "ادفع مرة واحدة، استخدم للأبد. بدون اشتراك.",
+                    features: ["نطاق واحد", "تحديثات مجانية للأبد", "بدون رسوم متكررة", "جميع الميزات"],
+                    cta: "دفعة واحدة",
                     highlight: false,
                     special: true
                 }
             ]
         },
-        socialProof: {
-            title: "نتائج تتحدث عن نفسها",
-            stat1: "90% دقة المطابقة",
-            stat2: "-30% طلبات وهمية",
-        },
-        whyUs: {
-            title: "لماذا يختار المحترفون DZ-Ghost؟",
-            subtitle: "لأننا نفهم التجارة في الجزائر.",
-            items: [
-                { title: "صُنع في الجزائر", desc: "نظام مبني خصيصاً ليتوافق مع عقلية المستهلك الجزائري وشركات الشحن المحلية.", icon: "flag" },
-                { title: "الملكية الكاملة", desc: "بياناتك ملكك وحدك. لا تشارك أسرارك التجارية مع أي منصة.", icon: "key" },
-                { title: "الذكاء الاصطناعي", desc: "النظام يعمل معك كمحلل بيانات محترف لتحسين نتائجك باستمرار.", icon: "brain" },
-                { title: "دعم محلي محترف", desc: "فريق جزائري يفهم مشاكلك ويتحدث لغتك، جاهز لمساعدتك.", icon: "headphones" },
-                { title: "تطوير مستمر", desc: "تحديثات دورية لمواكبة تغيرات فيسبوك والسوق، مجاناً.", icon: "refresh" },
-                { title: "مجتمع النخبة", desc: "انضم لأقوى مجتمع تجار إلكترونيين في الجزائر.", icon: "users" }
-            ]
-        },
-        stats: {
-            title: "لغة الأرقام",
-            items: [
-                { value: "+500", label: "متجر نشط" },
-                { value: "+2M", label: "طلب ناجح" },
-                { value: "9.5/10", label: "جودة المطابقة" },
-                { value: "x4", label: "متوسط العائد (ROAS)" }
-            ]
-        },
-        testimonials: {
-            title: "شركاء النجاح",
-            items: [
-                { name: "أحمد ك.", role: "تاجر إلكتروني - الجزائر", quote: "كنت أخسر 40% من ميزانيتي بسبب التتبع السيء. مع DZ-Ghost، تحول الـ ROAS من 1.5 إلى 4.5 خلال أسبوع." },
-                { name: "سارة م.", role: "مديرة تسويق", quote: "إدارة 15 متجر كانت كابوساً. الآن مع لوحة تحكم Squad، كل شيء منظم واللوجستيات أوتوماتيكية." },
-                { name: "يوسف ب.", role: "دروب شيبر - وهران", quote: "ربط ياليدين وحده يوفر علي ساعتين يومياً. النظام يستحق كل دينار." }
-            ]
-        },
         faq: {
             title: "أسئلة شائعة",
             items: [
-                { q: "هل يعمل مع القالب الحالي الخاص بي؟", a: "نعم، DZ-Ghost يعمل بتقنية الحقن البرمجي، فهو متوافق مع أي قالب ووكومرس تستخدمه." },
-                { q: "هل أحتاج لخبرة برمجية؟", a: "إطلاقاً. التثبيت عبارة عن إضافة ووردبريس عادية. ارفع، فعل، وابدأ البيع في 5 دقائق." },
-                { q: "كيف هو مستوى الدعم الفني؟", a: "نقدم دعماً سريعاً عبر واتساب والبريد الإلكتروني، مع أولوية قصوى لباقات الفرقة." },
-                { q: "هل يمكنني الانتقال من شوبيفاي؟", a: "بكل تأكيد. نوفر أدوات مجانية لنقل منتجاتك وبياناتك إلى نظامك الجديد بسلاسة." },
-                { q: "ماذا عن تحديثات فيسبوك؟", a: "فريقنا الهندسي يتابع تحديثات فيسبوك يومياً ويصدر تحديثات فورية للنظام لضمان الاستقرار." }
+                { q: "هل يعمل مع قالبي الحالي في ووردبريس؟", a: "نعم، DZ-Ghost متوافق مع جميع قوالب WordPress/WooCommerce. يُحقن نموذج الدفع تلقائياً." },
+                { q: "هل أحتاج إلى خبرة تقنية؟", a: "لا. التثبيت يستغرق 5 دقائق. ارفع الإضافة، فعّلها، اضبط البكسل. هذا كل شيء." },
+                { q: "كيف يعمل الدعم الفني؟", a: "دعم عبر واتساب والبريد الإلكتروني بالعربية والفرنسية. رد خلال 24 ساعة للباقات الأساسية، وأولوية للفرقة." },
+                { q: "هل يمكنني الانتقال من شوبيفاي؟", a: "بالتأكيد. نساعدك على نقل منتجاتك وبياناتك. هذا مشمول في التثبيت." },
+                { q: "ماذا عن تحديثات فيسبوك؟", a: "نحدّث الإضافة مع كل تغيير. تتلقى التحديثات تلقائياً." }
             ]
         },
+        whySwitch: {
+            eyebrow: "ما تخسره اليوم",
+            headline: "بيكسلاتك تفقد 60% من بياناتك. إليك ما يكلفك هذا فعلاً.",
+            subtitle: "iOS 14+ وحجب الإعلانات وصفحة الدفع البطيئة في WooCommerce تُنزف ميزانيتك في صمت. كل يوم بدون DZ-Ghost أنت تزايد بشكل أعمى.",
+            without: {
+                label: "بدون DZ-Ghost",
+                items: [
+                    { pain: "البيكسل محجوب بـ iOS 14+ ومانعات الإعلانات", impact: "60% من تحويلاتك لا تصل إلى البيكسل" },
+                    { pain: "صفحة دفع WooCommerce بطيئة", impact: "معدل التخلي أكثر من 70% على الجوال" },
+                    { pain: "إدارة يدوية لشركات الشحن", impact: "أخطاء وتأخيرات ومعدل إرجاع 35-45%" },
+                    { pain: "جماهير مستهدفة بشكل خاطئ لنقص البيانات", impact: "تكلفة الاكتساب ترتفع أسبوعياً بلا سبب واضح" },
+                    { pain: "لا أدوات لفريق الـ call center", impact: "طلبات مؤكدة ضائعة وعملاء لم يُعاد الاتصال بهم" },
+                ]
+            },
+            with: {
+                label: "مع DZ-Ghost",
+                items: [
+                    { fix: "Server-Side CAPI لفيسبوك وتيك توك وسناب", result: "100% من الأحداث تصل — جودة مطابقة 9/10" },
+                    { fix: "صفحة دفع COD محسّنة في صفحة واحدة", result: "معدل التحويل يتضاعف 2.4 مرة فور التثبيت" },
+                    { fix: "22 شركة شحن بـ API مباشر", result: "معدل إرجاع أقل من 20% مع تتبع تلقائي" },
+                    { fix: "بيانات نظيفة ← استهداف دقيق", result: "تكلفة الاكتساب تنخفض للنصف خلال 30 يوماً" },
+                    { fix: "مكتب تأكيد متكامل", result: "فريق call center أكثر كفاءة بـ 3 أضعاف" },
+                ]
+            },
+            proof: "المتاجر التي تفعّل DZ-Ghost ترى ROAS يرتفع من 1.5x إلى 4x في المتوسط خلال أول 30 يوماً.",
+            cta: "أريد التوقف عن خسارة المال",
+            ctaNote: "تثبيت في 5 دقائق · متوافق مع جميع قوالب WordPress"
+        },
         ctaBanner: {
-            title: "جاهز للانتقال للمستوى التالي؟",
-            subtitle: "انضم لأكثر من 500 تاجر جزائري يصنعون الأرقام الآن.",
+            title: "مستعد لتحويل متجرك COD؟",
+            subtitle: "انضم لـ 500+ تاجر جزائري ضاعفوا ROAS بأربعة أضعاف.",
             cta: "ابدأ الآن",
-            secondary: "شاهد العرض"
+            secondary: "شاهد العرض",
+            trustItems: ["تثبيت في 5 دقائق", "دعم واتساب 24/7", "ضمان الرضا أو استرداد المال"]
         },
         footer: {
-            copyright: "© 2026 DZ-Ghost. القوة الضاربة للتجارة الإلكترونية.",
-            links: ["التوثيق", "الدعم الفني", "الأسعار"],
+            tagline: "إضافة WordPress COD الشاملة للتجارة الإلكترونية الجزائرية.",
+            copyright: "© 2026 DZ-Ghost. جميع الحقوق محفوظة.",
+            links: {
+                product: { title: "المنتج", items: ["الميزات", "الأسعار", "التوثيق", "سجل التغييرات"] },
+                support: { title: "الدعم", items: ["مركز المساعدة", "واتساب", "البريد الإلكتروني", "الحالة"] },
+                legal: { title: "القانوني", items: ["سياسة الخصوصية", "شروط الاستخدام"] }
+            }
         },
     },
 };

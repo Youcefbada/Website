@@ -1,201 +1,255 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import { content } from '../data/content';
-import { Zap, Shield, TrendingUp, Play, BarChart3, Users, DollarSign, Activity } from 'lucide-react';
+import { CheckCircle, ArrowRight, TrendingUp, ShieldCheck } from 'lucide-react';
+import dashboardImg from '../assets/dashboard-shot.png';
+
+const chartBars = [35, 52, 40, 68, 55, 82, 74, 95, 80, 100];
+
+const AnimatedBar = ({ height, delay, highlight }) => {
+    const controls = useAnimation();
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true });
+    useEffect(() => {
+        if (inView) controls.start({ height: `${height}%`, transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] } });
+    }, [inView, controls, height, delay]);
+    return (
+        <motion.div ref={ref} initial={{ height: '0%' }} animate={controls}
+            className={`w-full rounded-t-sm ${highlight ? 'bg-primary' : 'bg-primary/20'}`} />
+    );
+};
 
 const Hero = ({ lang }) => {
     const t = content[lang].hero;
 
-    const badges = lang === 'ar'
-        ? [{ icon: Shield, text: 'Server-Side CAPI' }, { icon: Zap, text: 'أداء فائق' }, { icon: TrendingUp, text: '4x ROAS' }]
-        : [{ icon: Shield, text: 'Server-Side CAPI' }, { icon: Zap, text: 'Performance Maximale' }, { icon: TrendingUp, text: '4x ROAS' }];
-
     return (
-        <section className="relative min-h-[120vh] pt-32 pb-20 flex flex-col items-center justify-start overflow-hidden bg-[#030014]">
-            {/* Background Studio Lighting */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-[100%] blur-[120px] opacity-70 mix-blend-screen"></div>
-                <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/10 rounded-[100%] blur-[150px] mix-blend-screen"></div>
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent,transparent)]"></div>
-            </div>
+        <section className="relative pt-24 sm:pt-28 pb-0 bg-white overflow-hidden">
 
-            <div className="container max-w-5xl mx-auto px-6 text-center relative z-10">
-                {/* Launch Badge */}
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md mb-8 group cursor-pointer hover:bg-white/[0.06] transition-all"
-                >
-                    <span className="flex h-2.5 w-2.5 relative">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-                    </span>
-                    <span className="text-gray-300 text-sm font-medium tracking-wide">
-                        {lang === 'ar' ? 'أول بكسل Server-Side للجزائر' : 'Le Premier Pixel Server-Side d\'Algérie'}
-                    </span>
-                    <span className="text-gray-500 group-hover:text-white transition-colors">→</span>
-                </motion.div>
+            {/* ── Background ── */}
 
-                {/* Main Headline */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                    className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]"
-                >
-                    {t.headline.split('.')[0]}<span className="text-gray-500">.</span>
-                    <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
-                        {t.headline.split('. ')[1]}
-                    </span>
-                </motion.h1>
+            {/* Dot grid */}
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    backgroundImage: 'radial-gradient(circle, #c7d2fe 1px, transparent 1px)',
+                    backgroundSize: '36px 36px',
+                    opacity: 0.45,
+                }}
+            />
 
-                {/* Subheadline */}
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
-                >
-                    {t.subheadline}
-                </motion.p>
+            {/* Radial mask — keeps center clean for text */}
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    background: 'radial-gradient(ellipse 70% 60% at 30% 50%, transparent 40%, white 85%)',
+                }}
+            />
 
-                {/* CTA Buttons */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-                >
-                    <a
-                        href="#pricing"
-                        className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-gray-100 transition-all text-lg min-w-[200px]"
-                    >
-                        {t.cta}
-                        <Shield size={20} className="text-primary group-hover:scale-110 transition-transform" />
-                    </a>
-                    <a
-                        href="#features"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-2xl hover:bg-white/5 transition-all text-lg min-w-[200px]"
-                    >
-                        <Play size={20} className="text-gray-400" />
-                        {lang === 'ar' ? 'شاهد العرض' : 'Voir la Démo'}
-                    </a>
-                </motion.div>
-
-                {/* Micro-notifications */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-20"
-                >
-                    {badges.map((badge, i) => (
-                        <div key={i} className="flex items-center gap-2 text-gray-400 text-sm font-medium">
-                            <badge.icon size={16} className="text-gray-500" />
-                            {badge.text}
-                        </div>
-                    ))}
-                </motion.div>
-            </div>
-
-            {/* 3D Dashboard Mockup */}
+            {/* Animated aurora orbs */}
             <motion.div
-                initial={{ opacity: 0, y: 100, rotateX: 20, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, rotateX: 10, scale: 1 }}
-                transition={{ duration: 1.2, delay: 0.5, type: 'spring', bounce: 0.3 }}
-                className="relative z-20 w-full max-w-6xl mx-auto px-6 [perspective:2000px]"
-            >
-                <div className="relative transform-gpu transition-all duration-700 hover:rotate-x-0 group">
+                animate={{ x: [0, 40, 0], y: [0, -30, 0], scale: [1, 1.08, 1] }}
+                transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -top-32 -left-32 w-[700px] h-[700px] rounded-full pointer-events-none"
+                style={{ background: 'radial-gradient(circle, rgba(165,180,252,0.45) 0%, transparent 70%)' }}
+            />
+            <motion.div
+                animate={{ x: [0, -30, 0], y: [0, 25, 0], scale: [1, 1.1, 1] }}
+                transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+                className="absolute -top-16 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
+                style={{ background: 'radial-gradient(circle, rgba(196,181,253,0.40) 0%, transparent 70%)' }}
+            />
+            <motion.div
+                animate={{ x: [0, 20, 0], y: [0, -20, 0], scale: [1, 1.05, 1] }}
+                transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 8 }}
+                className="absolute bottom-0 left-1/3 w-[500px] h-[500px] rounded-full pointer-events-none"
+                style={{ background: 'radial-gradient(circle, rgba(186,230,253,0.35) 0%, transparent 70%)' }}
+            />
 
-                    {/* Floating Elements OVER the dashboard */}
-                    <div className="absolute -left-12 top-20 z-30 bg-[#0f1117]/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-float hidden md:flex">
-                        <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-500">
-                            <TrendingUp size={20} />
-                        </div>
-                        <div>
-                            <p className="text-xs text-gray-400 font-medium tracking-wide uppercase">CPA Reduit</p>
-                            <p className="text-lg text-white font-bold">-32%</p>
-                        </div>
-                    </div>
+            {/* Fade bottom edge into white (section below) */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+                style={{ background: 'linear-gradient(to bottom, transparent, white)' }} />
 
-                    <div className="absolute -right-8 top-40 z-30 bg-[#0f1117]/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-float hidden md:flex" style={{ animationDelay: '1s' }}>
-                        <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
-                            <Activity size={20} />
-                        </div>
-                        <div>
-                            <p className="text-xs text-gray-400 font-medium tracking-wide uppercase">Server-Side</p>
-                            <p className="text-lg text-white font-bold">100% Match</p>
-                        </div>
-                    </div>
+            <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
-                    {/* Dashboard Window */}
-                    <div className="w-full bg-[#0a0a0a]/90 backdrop-blur-2xl rounded-3xl sm:rounded-[2.5rem] border border-white/10 shadow-[0_0_100px_rgba(176,66,255,0.15)] overflow-hidden">
+                    {/* ── Left column ── */}
+                    <div className="max-w-xl py-8 sm:py-12 lg:py-16">
+                        {/* Eyebrow */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4 }}
+                            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/6 text-primary text-xs font-semibold tracking-wide mb-6"
+                        >
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                            {t.eyebrow}
+                        </motion.div>
 
-                        {/* Fake Browser Top Bar */}
-                        <div className="h-14 bg-white/5 border-b border-white/5 flex items-center px-6 gap-2">
-                            <div className="flex gap-2">
-                                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                            </div>
-                            <div className="mx-auto flex h-8 w-64 md:w-96 items-center justify-center rounded-md bg-white/5 text-xs text-gray-500 font-medium">
-                                dashboard.dz-ghost.com
-                            </div>
-                        </div>
+                        {/* Headline */}
+                        <motion.h1
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-text-dark leading-[1.1] tracking-tight mb-5"
+                        >
+                            {lang === 'ar' ? (
+                                <>
+                                    إضافة WordPress التي تضاعف مبيعات COD{' '}
+                                    <span style={{
+                                        background: 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)',
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        backgroundClip: 'text',
+                                    }}>للجزائر</span>
+                                </>
+                            ) : (
+                                <>
+                                    Le Plugin WordPress qui double les ventes COD{' '}
+                                    <span style={{
+                                        background: 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)',
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        backgroundClip: 'text',
+                                    }}>pour l&apos;Algérie</span>
+                                </>
+                            )}
+                        </motion.h1>
 
-                        {/* Dashboard Inside Layout */}
-                        <div className="flex h-[400px] sm:h-[600px] w-full">
-                            {/* Fake Sidebar */}
-                            <div className="w-48 sm:w-64 border-r border-white/5 p-4 sm:p-6 hidden sm:flex flex-col gap-6">
-                                <div className="h-8 w-24 bg-white/10 rounded-md mb-4"></div>
-                                {[1, 2, 3, 4, 5].map((i) => (
-                                    <div key={i} className="flex flex-col gap-3">
-                                        <div className={`h-4 w-full rounded-md ${i === 1 ? 'bg-primary/20' : 'bg-white/5'}`}></div>
-                                    </div>
-                                ))}
-                            </div>
+                        {/* Subheadline */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.55, delay: 0.2 }}
+                            className="text-base sm:text-lg text-text-body leading-relaxed mb-8"
+                        >
+                            {t.subheadline}
+                        </motion.p>
 
-                            {/* Fake Main Content */}
-                            <div className="flex-1 p-6 sm:p-10 flex flex-col gap-8 overflow-hidden bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMikiLz48L3N2Zz4=')]">
+                        {/* CTAs */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            className="flex flex-col sm:flex-row gap-3 mb-8"
+                        >
+                            <a
+                                href="#pricing"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors text-sm"
+                            >
+                                {t.cta} <ArrowRight size={16} />
+                            </a>
+                            <a
+                                href="#features"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border border-border text-text-dark font-semibold rounded-lg hover:bg-bg-light transition-colors text-sm"
+                            >
+                                {t.ctaSecondary}
+                            </a>
+                        </motion.div>
 
-                                {/* Header Stats */}
-                                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-                                    {[
-                                        { label: 'Revenus', val: '2.4M DZD', icon: DollarSign, color: 'text-green-400' },
-                                        { label: 'Visiteurs', val: '45,231', icon: Users, color: 'text-blue-400' },
-                                        { label: 'Taux de Conv.', val: '4.8%', icon: BarChart3, color: 'text-primary' },
-                                    ].map((stat, i) => (
-                                        <div key={i} className="bg-white/5 border border-white/5 rounded-2xl p-4 sm:p-6 flex flex-col gap-2">
-                                            <div className="flex items-center justify-between">
-                                                <span className="text-gray-400 text-xs sm:text-sm font-medium">{stat.label}</span>
-                                                <stat.icon size={16} className={stat.color} />
-                                            </div>
-                                            <span className="text-xl sm:text-3xl font-bold text-white">{stat.val}</span>
-                                        </div>
-                                    ))}
+                        {/* Trust strip */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.45 }}
+                            className="flex flex-col gap-2.5"
+                        >
+                            {t.trustBadges.map((badge, i) => (
+                                <div key={i} className="flex items-center gap-2 text-text-muted text-sm">
+                                    <CheckCircle size={14} className="text-accent shrink-0" />
+                                    {badge}
                                 </div>
+                            ))}
+                        </motion.div>
+                    </div>
 
-                                {/* Main Chart Area */}
-                                <div className="flex-1 bg-white/5 border border-white/5 rounded-2xl p-6 relative flex flex-col items-center justify-end overflow-hidden">
-                                    {/* Fake Chart Lines */}
-                                    <div className="absolute inset-x-0 bottom-0 top-[20%] flex items-end gap-2 sm:gap-4 px-4 sm:px-10 opacity-60">
-                                        {[40, 60, 45, 80, 50, 90, 70, 100, 85, 110].map((h, i) => (
-                                            <div key={i} className="w-full bg-gradient-to-t from-primary/40 to-primary/10 rounded-t-sm" style={{ height: `${h}%` }}></div>
-                                        ))}
-                                    </div>
+                    {/* ── Right column — product screenshot ── */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                        className="relative lg:mt-0 mt-4"
+                    >
+                    {/* Subtle continuous float on the whole right column */}
+                    <motion.div
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                        className="relative"
+                    >
+                        {/* One subtle floating badge */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.9 }}
+                            className="absolute -left-4 sm:-left-6 top-16 z-20 hidden sm:block"
+                        >
+                            <motion.div
+                                animate={{ y: [0, -6, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                                className="bg-white border border-border rounded-xl shadow-md px-4 py-3 flex items-center gap-3"
+                            >
+                                <div className="w-8 h-8 bg-green-50 border border-green-100 rounded-lg flex items-center justify-center">
+                                    <TrendingUp size={16} className="text-green-600" />
                                 </div>
+                                <div>
+                                    <p className="text-[11px] text-text-muted font-medium leading-none mb-0.5">ROAS moyen</p>
+                                    <p className="text-sm font-bold text-text-dark leading-none">4x après install</p>
+                                </div>
+                            </motion.div>
+                        </motion.div>
 
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 1.05 }}
+                            className="absolute -right-4 sm:-right-6 top-1/3 z-20 hidden sm:block"
+                        >
+                            <motion.div
+                                animate={{ y: [0, -6, 0] }}
+                                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+                                className="bg-white border border-border rounded-xl shadow-md px-4 py-3 flex items-center gap-3"
+                            >
+                                <div className="w-8 h-8 bg-primary/8 border border-primary/15 rounded-lg flex items-center justify-center">
+                                    <ShieldCheck size={16} className="text-primary" />
+                                </div>
+                                <div>
+                                    <p className="text-[11px] text-text-muted font-medium leading-none mb-0.5">Match Quality</p>
+                                    <p className="text-sm font-bold text-text-dark leading-none">9/10 Score</p>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+
+                        {/* Browser frame */}
+                        <div
+                            className="rounded-xl sm:rounded-2xl border border-border overflow-hidden"
+                            style={{ boxShadow: '0 24px 64px rgba(15,23,42,0.10), 0 4px 16px rgba(15,23,42,0.06)' }}
+                        >
+                            {/* Browser chrome */}
+                            <div className="h-10 bg-bg-gray border-b border-border flex items-center px-4 gap-3">
+                                <div className="flex gap-1.5">
+                                    <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                                    <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                                    <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                                </div>
+                                <div className="flex-1 h-6 bg-white border border-border rounded-md flex items-center justify-center">
+                                    <span className="text-[11px] text-text-muted font-medium">dashboard.dz-ghost.com</span>
+                                </div>
                             </div>
+                            {/* Real screenshot */}
+                            <img
+                                src={dashboardImg}
+                                alt="DZ-Ghost Dashboard"
+                                className="w-full block"
+                                style={{ maxHeight: '520px', objectFit: 'cover', objectPosition: 'top' }}
+                            />
                         </div>
 
-                    </div>
+                        {/* Reflection below */}
+                        <div className="h-16 mx-8 bg-slate-200/40 blur-2xl rounded-full -mt-1"></div>
+                    </motion.div>{/* end float */}
+                    </motion.div>{/* end outer right column */}
+
                 </div>
-            </motion.div>
-
-            {/* Fade bottom to match next section */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#030014] to-transparent z-30 pointer-events-none"></div>
+            </div>
         </section>
     );
 };

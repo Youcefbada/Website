@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import SmoothScroll from './SmoothScroll';
+import ScrollProgressBar from './ScrollProgressBar';
+import WhatsAppButton from './WhatsAppButton';
+import CookieConsent from './CookieConsent';
+import AnnouncementBar from './AnnouncementBar';
+import StickyCTA from './StickyCTA';
+import BackToTop from './BackToTop';
 
 const Layout = ({ children, lang, setLang }) => {
     useEffect(() => {
@@ -10,7 +16,7 @@ const Layout = ({ children, lang, setLang }) => {
 
         // Update font based on language
         if (lang === 'ar') {
-            document.body.style.fontFamily = '"Almarai", system-ui, sans-serif';
+            document.body.style.fontFamily = '"Cairo", system-ui, sans-serif';
         } else {
             document.body.style.fontFamily = '"Plus Jakarta Sans", system-ui, sans-serif';
         }
@@ -18,13 +24,19 @@ const Layout = ({ children, lang, setLang }) => {
 
     return (
         <SmoothScroll>
-            <div className="min-h-screen bg-bg-dark text-white overflow-x-hidden flex flex-col">
+            <ScrollProgressBar />
+            <div className="min-h-screen bg-bg-white text-text-body overflow-x-hidden flex flex-col">
+                <AnnouncementBar lang={lang} />
                 <Navbar lang={lang} setLang={setLang} />
                 <main className="flex-grow">
                     {children}
                 </main>
                 <Footer lang={lang} />
             </div>
+            <WhatsAppButton lang={lang} />
+            <StickyCTA lang={lang} />
+            <BackToTop />
+            <CookieConsent lang={lang} />
         </SmoothScroll>
     );
 };

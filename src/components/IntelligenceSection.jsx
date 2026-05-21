@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { content } from '../data/content';
-import { ShoppingCart, Clock, Gift, MessageCircle, CheckCircle2, Smartphone, MapPin, ArrowRight } from 'lucide-react';
+import { Server, Shield, BarChart2, Brain, Map, ArrowRight } from 'lucide-react';
 
-const featureIcons = [ShoppingCart, Gift, Smartphone, Clock, MessageCircle];
+const featureIcons = [Server, Shield, BarChart2, Brain, Map];
 
-const CheckoutFeaturesSection = ({ lang }) => {
-    const t = content[lang].checkoutSection;
+const IntelligenceSection = ({ lang }) => {
+    const t = content[lang].intelligenceSection;
 
     return (
         <section className="py-20 sm:py-28 bg-bg-light">
@@ -42,7 +42,7 @@ const CheckoutFeaturesSection = ({ lang }) => {
                         </motion.p>
                         <ul className="space-y-4">
                             {t.features.map((feature, i) => {
-                                const Icon = featureIcons[i] || ShoppingCart;
+                                const Icon = featureIcons[i] || Server;
                                 return (
                                     <motion.li
                                         key={i}
@@ -52,8 +52,8 @@ const CheckoutFeaturesSection = ({ lang }) => {
                                         transition={{ delay: i * 0.08 }}
                                         className="flex items-start gap-4"
                                     >
-                                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                                            <Icon size={18} className="text-primary" />
+                                        <div className="w-9 h-9 rounded-lg bg-purple-50 flex items-center justify-center shrink-0 mt-0.5 border border-purple-100">
+                                            <Icon size={18} className="text-purple-600" />
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-text-dark text-sm sm:text-base">{feature.title}</h4>
@@ -71,7 +71,7 @@ const CheckoutFeaturesSection = ({ lang }) => {
                             href="#pricing"
                             className="inline-flex items-center gap-2 mt-8 text-primary font-semibold text-sm hover:gap-3 transition-all"
                         >
-                            {lang === 'ar' ? 'ابدأ الآن' : 'Démarrer maintenant'}
+                            {lang === 'ar' ? 'ابدأ الآن' : 'En savoir plus'}
                             <ArrowRight size={16} />
                         </motion.a>
                     </div>
@@ -84,39 +84,46 @@ const CheckoutFeaturesSection = ({ lang }) => {
                         transition={{ delay: 0.2 }}
                         className="bg-white border border-border rounded-2xl shadow-lg overflow-hidden"
                     >
-                        <div className="bg-bg-gray border-b border-border px-5 py-3 flex items-center gap-2">
-                            <div className="flex gap-1.5">
-                                <div className="w-3 h-3 rounded-full bg-red-400/70"></div>
-                                <div className="w-3 h-3 rounded-full bg-yellow-400/70"></div>
-                                <div className="w-3 h-3 rounded-full bg-green-400/70"></div>
-                            </div>
-                            <span className="text-xs text-text-muted ml-2 font-mono">checkout-dz-ghost.php</span>
+                        <div className="bg-bg-gray border-b border-border px-5 py-3.5">
+                            <span className="text-sm font-semibold text-text-dark">Auditeur de Campagne — IA</span>
                         </div>
-                        <div className="p-6 sm:p-8 space-y-4">
-                            <h4 className="text-sm font-bold text-text-dark">Confirmer votre commande</h4>
-                            <div className="grid grid-cols-2 gap-3">
-                                <div className="h-11 bg-bg-light rounded-lg border border-border flex items-center px-3">
-                                    <span className="text-text-muted text-sm">Nom complet</span>
+                        <div className="p-5 space-y-4">
+                            <div className="flex items-center gap-3 p-3 bg-bg-light rounded-xl border border-border">
+                                <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center border border-blue-100 shrink-0">
+                                    <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                                 </div>
-                                <div className="h-11 bg-bg-light rounded-lg border border-border flex items-center px-3">
-                                    <span className="text-text-muted text-sm">Téléphone</span>
-                                </div>
+                                <span className="text-sm font-medium text-text-dark">Chaussures_Hiver_FR</span>
                             </div>
-                            <div className="h-11 bg-bg-light rounded-lg border border-border flex items-center justify-between px-3">
-                                <span className="text-text-dark text-sm font-medium">16 — Alger</span>
-                                <svg className="w-4 h-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <div className="h-11 bg-bg-light rounded-lg border border-border flex items-center justify-between px-3">
-                                <span className="text-text-dark text-sm font-medium">Bab El Oued</span>
-                                <svg className="w-4 h-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <div className="bg-primary text-white rounded-xl py-3.5 flex items-center justify-center cursor-pointer hover:bg-primary-dark transition-all">
-                                <span className="font-bold text-sm tracking-wide">{lang === 'ar' ? 'تأكيد الطلب' : 'CONFIRMER LA COMMANDE'}</span>
-                            </div>
-                            <div className="flex items-center justify-center gap-4 pt-1">
-                                {['🔒 Sécurisé', 'COD', '58 Wilayas'].map((b, i) => (
-                                    <span key={i} className="text-xs text-text-muted font-medium">{b}</span>
+                            <div className="grid grid-cols-3 gap-2">
+                                {[
+                                    { label: 'CPA', val: '1.2$', color: 'text-text-dark' },
+                                    { label: 'ROAS', val: '4.8x', color: 'text-green-600' },
+                                    { label: 'Commandes', val: '142', color: 'text-text-dark' },
+                                ].map((m, i) => (
+                                    <div key={i} className="bg-bg-light rounded-xl p-3 border border-border text-center">
+                                        <p className="text-xs text-text-muted mb-1">{m.label}</p>
+                                        <p className={`text-base font-bold ${m.color}`}>{m.val}</p>
+                                    </div>
                                 ))}
+                            </div>
+                            <div className="border-t border-border pt-3 flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <span className="relative flex h-2.5 w-2.5">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                                    </span>
+                                    <span className="text-xs text-text-muted font-medium">{lang === 'ar' ? 'حكم الذكاء الاصطناعي:' : 'IA Verdict:'}</span>
+                                </div>
+                                <span className="text-xs font-black px-3 py-1.5 rounded-full bg-green-50 text-green-600 border border-green-200 tracking-widest">SCALE ↑</span>
+                            </div>
+
+                            <div className="border-t border-border pt-3 space-y-2">
+                                <p className="text-xs font-semibold text-text-muted uppercase tracking-widest">Platforms connectées</p>
+                                <div className="flex items-center gap-2">
+                                    {['Facebook', 'TikTok', 'Snapchat'].map((p, i) => (
+                                        <span key={i} className="text-xs font-semibold px-2.5 py-1 bg-primary/8 text-primary rounded-lg border border-primary/20">{p}</span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </motion.div>
@@ -126,4 +133,4 @@ const CheckoutFeaturesSection = ({ lang }) => {
     );
 };
 
-export default CheckoutFeaturesSection;
+export default IntelligenceSection;

@@ -1,67 +1,71 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { content } from '../data/content';
-import { useRef, useEffect, useState } from 'react';
 
-const AnimatedNumber = ({ value, suffix = '' }) => {
+const CountUp = ({ value, delay = 0 }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
-    const [displayValue, setDisplayValue] = useState(0);
-
-    const numericValue = parseInt(value.replace(/[^0-9]/g, ''));
+    const inView = useInView(ref, { once: true });
+    const [display, setDisplay] = useState('0');
 
     useEffect(() => {
-        if (isInView) {
-            let start = 0;
-            const duration = 2000;
-            const increment = numericValue / (duration / 16);
+        if (!inView) return;
+        const raw = value.replace(/[^\d.]/g, '');
+        const target = parseFloat(raw);
+        if (isNaN(target)) { setDisplay(value); return; }
 
+        const prefix = value.startsWith('+') ? '+' : value.startsWith('-') ? '-' : '';
+        const suffix = value.replace(/^[+-]?[\d.]+/, '');
+        const isFloat = raw.includes('.');
+        const duration = 1400;
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        let frame = 0;
+
+        const timeout = setTimeout(() => {
             const timer = setInterval(() => {
-                start += increment;
-                if (start >= numericValue) {
-                    setDisplayValue(numericValue);
+                frame++;
+                current = Math.min(current + increment, target);
+                const formatted = isFloat
+                    ? current.toFixed(1)
+                    : Math.floor(current).toLocaleString();
+                setDisplay(`${prefix}${formatted}${suffix}`);
+                if (frame >= steps) {
                     clearInterval(timer);
-                } else {
-                    setDisplayValue(Math.floor(start));
+                    setDisplay(value);
                 }
-            }, 16);
+            }, duration / steps);
+        }, delay * 1000);
 
-            return () => clearInterval(timer);
-        }
-    }, [isInView, numericValue]);
+        return () => clearTimeout(timeout);
+    }, [inView, value, delay]);
 
-    const prefix = value.includes('+') && !value.startsWith('+') ? '' : value.startsWith('+') ? '+' : '';
-    const displaySuffix = value.includes('+') && !value.startsWith('+') ? '+' : '';
-
-    return (
-        <span ref={ref}>
-            {prefix}{displayValue}{displaySuffix}{suffix}
-        </span>
-    );
+    return <span ref={ref}>{display}</span>;
 };
 
 const StatsSection = ({ lang }) => {
     const t = content[lang].stats;
 
     return (
-        <section className="py-24 relative">
-            <div className="container max-w-[85%] mx-auto px-6">
-                <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-16">{t.title}</h2>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <section className="py-20 sm:py-24 bg-primary overflow-hidden">
+            <div className="container max-w-6xl mx-auto px-4 sm:px-6">
+                <div className="text-center mb-12">
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-white">{t.title}</h2>
+                </div>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 stats-grid">
                     {t.items.map((stat, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.15 }}
-                            className="bg-[#0f1117] text-center p-8 md:p-10 rounded-3xl border border-white/10 hover:border-primary hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center"
+                            transition={{ delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-center"
                         >
-                            <div className="text-5xl md:text-6xl font-bold text-white mb-4 flex items-center justify-center tracking-tight">
-                                <AnimatedNumber value={stat.value} />
+                            <div className="text-4xl sm:text-5xl font-extrabold text-white mb-2 tracking-tight tabular-nums">
+                                <CountUp value={stat.value} delay={i * 0.15} />
                             </div>
-                            <div className="text-gray-300 font-semibold text-sm md:text-base uppercase tracking-widest leading-snug">{stat.label}</div>
+                            <div className="text-white/70 text-xs sm:text-sm font-medium leading-snug">{stat.label}</div>
                         </motion.div>
                     ))}
                 </div>
