@@ -6,13 +6,13 @@ import logoImg from '../assets/logo.png';
 const copy = {
     fr: {
         label: 'DZ-Ghost',
-        sub: 'à partir de 14 900 DA / an',
+        sub: 'à partir de 9 900 DA / an',
         cta: 'Obtenir la licence',
         dismiss: 'Plus tard',
     },
     ar: {
         label: 'DZ-Ghost',
-        sub: 'ابتداءً من 14,900 دج / سنوياً',
+        sub: 'ابتداءً من 9,900 دج / سنوياً',
         cta: 'احصل على الترخيص',
         dismiss: 'لاحقاً',
     },

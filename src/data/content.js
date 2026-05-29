@@ -11,14 +11,14 @@ export const content = {
             subheadline: "Checkout ultra-rapide, confirmation d'équipe, 22 transporteurs et Server-Side CAPI — tout ce dont votre boutique WooCommerce a besoin, en un seul plugin.",
             cta: "Démarrer Gratuitement",
             ctaSecondary: "Voir la Démo",
-            trustBadges: ["500+ Boutiques Actives", "22 Transporteurs Intégrés", "Support FR/AR"],
+            trustBadges: ["22 Transporteurs Intégrés", "58 Wilayas Couvertes", "Support FR/AR"],
         },
         socialProofStrip: {
             label: "Ils nous font confiance",
             stats: [
-                { value: "500+", label: "Boutiques actives" },
-                { value: "2M+", label: "Commandes traitées" },
                 { value: "22", label: "Transporteurs intégrés" },
+                { value: "58", label: "Wilayas couvertes" },
+                { value: "25", label: "Modules admin" },
                 { value: "9/10", label: "Match Quality Score" },
             ]
         },
@@ -64,44 +64,44 @@ export const content = {
             title: "De la confirmation à la livraison, automatisé",
             subtitle: "Un bureau de confirmation complet pour vos équipes call center, connecté à 22 transporteurs algériens.",
             features: [
-                { title: "Bureau de Confirmation", desc: "Interface dédiée pour les équipes call center avec rôles personnalisés, logs d'appels et workflow de confirmation." },
-                { title: "22 Transporteurs Algériens", desc: "API directe avec Yalidine, ZR Express, Procolis, Ecotrack et 18 autres. Expédiez en un clic." },
-                { title: "Auto-Tracking", desc: "Synchronisation automatique des statuts de livraison depuis les transporteurs vers votre tableau de bord." },
-                { title: "Cycle de Vie Complet", desc: "Nouvelle → Appel → Confirmée → Expédiée → Livrée. Chaque étape trackée et visible en temps réel." },
+                { title: "Bureau de Confirmation", desc: "Interface dédiée pour les équipes call center avec rôles personnalisés (confirmation_agent), logs d'appels et workflow structuré." },
+                { title: "22 Transporteurs Algériens", desc: "API directe avec Yalidine, ZR Express, Procolis, Ecotrack, Maystro, Guépex et 16 autres. Expédiez en un clic." },
+                { title: "Auto-Tracking Horaire", desc: "Synchronisation automatique des statuts de livraison via WP-Cron toutes les heures pour 50 commandes expédiées." },
+                { title: "Cycle de Vie Complet", desc: "Nouvelle → Appel 1 → Appel 2 → Appel 3 → Confirmée / Retour → Expédiée → Livrée. Chaque étape trackée en temps réel." },
                 { title: "Sync Google Sheets", desc: "Pousse instantanément les nouvelles commandes vers votre spreadsheet pour votre call center." },
-            ]
+            ],
         },
         intelligenceSection: {
             eyebrow: "Tracking & Intelligence",
             title: "La donnée au niveau auquel Facebook n'accède plus",
             subtitle: "Server-Side CAPI qui contourne iOS 14+, avec analytics avancée et IA pour piloter vos campagnes.",
             features: [
-                { title: "Server-Side CAPI", desc: "Envoie vos événements Facebook, TikTok et Snapchat directement depuis votre serveur. Contourne tous les bloqueurs et iOS 14+." },
-                { title: "Match Quality 9/10", desc: "Chiffrement SHA-256 automatique des données clients pour une précision de ciblage maximale." },
+                { title: "Server-Side CAPI", desc: "Facebook Graph API v24.0, TikTok Business API v1.3, Snapchat CAPI v2. Envoyés directement depuis votre serveur — contourne tous les bloqueurs et iOS 14+." },
+                { title: "Match Quality 9/10", desc: "Chiffrement SHA-256 de toutes les données clients (téléphone, nom, ville) pour une précision de ciblage maximale." },
                 { title: "The War Room", desc: "Dashboard centralisé avec KPI temps réel, taux de livraison par wilaya et entonnoirs de vente complets." },
                 { title: "Auditeur de Campagne IA", desc: "Algorithme intelligent analysant ROAS, CTR et fréquence avec recommandations concrètes : SCALE ou KILL." },
-                { title: "Carte Interactive Wilaya", desc: "Visualisez les performances de livraison vs retours sur une carte interactive de l'Algérie." },
+                { title: "Carte Interactive Wilaya", desc: "Visualisez les performances de livraison vs retours sur une carte interactive de l'Algérie avec zoom par wilaya." },
             ]
         },
         securitySection: {
             eyebrow: "Sécurité & Confiance",
             title: "Fortifié contre les bots, les fraudes et les fuites",
             items: [
-                { title: "Chiffrement AES-256", desc: "Toutes vos données et communications sont chiffrées au niveau militaire." },
-                { title: "Bouclier Anti-Bot", desc: "Pare-feu actif filtrant les bots par User-Agent et IP. Vos données restent propres." },
-                { title: "Validation Téléphone", desc: "Vérification en temps réel des numéros algériens pour éliminer les fausses commandes." },
-                { title: "Liste Noire Clients", desc: "Bloquez automatiquement les clients frauduleux basé sur l'historique et le comportement." },
-                { title: "Détection VPN/Proxy", desc: "Identifiez et filtrez le trafic artificiel provenant de VPNs et proxies." },
-                { title: "En-têtes CSP", desc: "Content Security Policy configurée automatiquement pour protéger votre vitrine." },
+                { title: "Chiffrement AES-256-CBC", desc: "Toutes vos données et communications sont chiffrées en AES-256-CBC via les clés WordPress (AUTH_KEY + SECURE_AUTH_KEY)." },
+                { title: "Bouclier Anti-Bot (20+ signatures)", desc: "Pare-feu actif filtrant plus de 20 signatures de bots connus par User-Agent et IP. Vos données restent propres." },
+                { title: "Validation Téléphone Algérien", desc: "Vérification stricte des numéros 05/06/07 avec rejet des numéros répétitifs pour éliminer les fausses commandes." },
+                { title: "Liste Noire Clients", desc: "Blocage par IP, téléphone ou email via la table dz_blacklist. Gestion complète via l'interface admin." },
+                { title: "Détection VPN/Proxy", desc: "Analyse des en-têtes HTTP pour identifier et filtrer le trafic artificiel provenant de VPNs et proxies." },
+                { title: "En-têtes CSP", desc: "Content-Security-Policy + X-Frame-Options + XSS Protection configurés automatiquement pour protéger votre vitrine." },
             ]
         },
         stats: {
-            title: "Des résultats mesurables",
+            title: "Des chiffres réels",
             items: [
-                { value: "4x", label: "ROAS Moyen Après Installation" },
-                { value: "-32%", label: "Réduction du CPA" },
-                { value: "9/10", label: "Match Quality Score" },
-                { value: "22", label: "Transporteurs Intégrés" }
+                { value: "22", label: "Transporteurs Algériens Intégrés" },
+                { value: "58", label: "Wilayas couvertes (base complète)" },
+                { value: "25", label: "Modules Admin Indépendants" },
+                { value: "6", label: "Intégrations Externes (FB, TikTok, Snap, Sheets, WA, Elementor)" }
             ]
         },
         testimonials: {
@@ -123,38 +123,141 @@ export const content = {
             ],
         },
         pricing: {
-            eyebrow: "Tarifs",
-            title: "Un investissement, pas un loyer",
-            subtitle: "Choisissez le plan adapté à la taille de votre opération.",
+            eyebrow: "Tarifs Officiels",
+            title: "Arrêtez de payer pour de la pub aveugle. Investissez dans la donnée.",
+            subtitle: "Chaque dinar dépensé ici vous en rapporte 4 en retour. Choisissez selon votre taille d'opération.",
+            merchantTitle: "Plans Marchands",
+            merchantSubtitle: "Pour les boutiques solo — 1 domaine, revenus directs.",
+            devTitle: "Packs Développeur & Agence",
+            devSubtitle: "Achetez en gros, revendez à vos clients. Chaque pack se rembourse dès le 1er client.",
             plans: [
                 {
-                    name: "Le Soldat",
-                    price: "14,900 DA",
+                    name: "Starter",
+                    price: "9,900 DA",
                     period: "/ an",
-                    desc: "Idéal pour les vendeurs solo qui démarrent.",
-                    features: ["1 Domaine", "Checkout COD Complet", "Tracking Server-Side", "22 Transporteurs", "Support Standard"],
-                    cta: "Commencer",
-                    highlight: false
-                },
-                {
-                    name: "L'Escouade",
-                    price: "59,000 DA",
-                    period: "/ an",
-                    desc: "Pour les agences et opérations multi-boutiques.",
-                    features: ["10 Domaines", "Support Prioritaire", "Marque Blanche", "Gestion Clients", "Accès Anticipé"],
-                    cta: "Choisir L'Escouade",
-                    highlight: true,
-                    tag: "Meilleure Valeur"
-                },
-                {
-                    name: "Le Royaume",
-                    price: "45,000 DA",
-                    period: "/ une fois",
-                    desc: "Payez une fois, utilisez à vie. Sans abonnement.",
-                    features: ["1 Domaine", "Mises à Jour à Vie", "Pas de Frais Récurrents", "Toutes les Fonctionnalités"],
-                    cta: "Paiement Unique",
+                    priceNote: "= 825 DA/mois",
+                    desc: "Pour les débutants (~15 commandes/jour). Moins cher qu'une journée de pub perdue.",
+                    orderLimit: "450 commandes / mois",
+                    domains: "1 Domaine",
+                    features: [
+                        "Checkout COD One-Page",
+                        "Server-Side CAPI (FB + TikTok + Snap)",
+                        "22 Transporteurs Algériens",
+                        "Bureau de Confirmation",
+                        "Auto-Tracking Livraisons",
+                        "Dashboard Analytics",
+                        "Anti-Bot & Validation Téléphone"
+                    ],
+                    cta: "Démarrer avec Starter",
                     highlight: false,
-                    special: true
+                    tier: "merchant"
+                },
+                {
+                    name: "Growth",
+                    price: "19,000 DA",
+                    period: "/ an",
+                    priceNote: "= 1,583 DA/mois",
+                    desc: "Pour les opérateurs sérieux (~40 commandes/jour). Un ROAS à 4x couvre ce plan en 3 jours.",
+                    orderLimit: "1,300 commandes / mois",
+                    domains: "1 Domaine",
+                    features: [
+                        "Tout le plan Starter",
+                        "Auditeur de Campagne IA",
+                        "The War Room Dashboard",
+                        "Carte Interactive Wilaya",
+                        "Gestion des Offres & AOV",
+                        "Google Sheets Sync",
+                        "Support Prioritaire WhatsApp"
+                    ],
+                    cta: "Passer à Growth",
+                    highlight: true,
+                    tag: "Le Plus Populaire",
+                    tier: "merchant"
+                },
+                {
+                    name: "Pro",
+                    price: "34,000 DA",
+                    period: "/ an",
+                    priceNote: "= 2,833 DA/mois",
+                    desc: "Pour les gros volumes (~130 commandes/jour). À ce niveau, le plugin se finance seul en 1 semaine.",
+                    orderLimit: "4,000 commandes / mois",
+                    domains: "1 Domaine",
+                    features: [
+                        "Tout le plan Growth",
+                        "4,000 commandes / mois",
+                        "Ghost Slicer — Landing Pages",
+                        "Système Financier & P&L",
+                        "Performance Équipe Call Center",
+                        "Export Données Avancé",
+                        "Support VIP Dédié"
+                    ],
+                    cta: "Choisir Pro",
+                    highlight: false,
+                    tier: "merchant"
+                },
+                {
+                    name: "Developer Lite",
+                    price: "24,000 DA",
+                    period: "/ an",
+                    priceNote: "→ Revendez 3 × 9,900 DA = 29,700 DA",
+                    desc: "3 clients. Investissement 24K, retour potentiel ~45,000 DA.",
+                    orderLimit: "450 commandes / mois / client",
+                    domains: "3 Clients / Domaines",
+                    profit: "~45,000 DA potentiel",
+                    features: [
+                        "3 licences clients incluses",
+                        "450 commandes/mois par client",
+                        "Toutes les fonctionnalités Starter",
+                        "Dashboard agence centralisé",
+                        "Support technique dédié"
+                    ],
+                    cta: "Commencer Developer Lite",
+                    highlight: false,
+                    tier: "dev"
+                },
+                {
+                    name: "Developer Pro",
+                    price: "39,000 DA",
+                    period: "/ an",
+                    priceNote: "→ Revendez 5 × 9,900 DA = 49,500 DA",
+                    desc: "5 clients. Rentabilisé dès le 4ème client facturé.",
+                    orderLimit: "450 commandes / mois / client",
+                    domains: "5 Clients / Domaines",
+                    profit: "~75,000 DA potentiel",
+                    features: [
+                        "5 licences clients incluses",
+                        "450 commandes/mois par client",
+                        "Toutes les fonctionnalités Starter",
+                        "Dashboard agence centralisé",
+                        "Support prioritaire dédié",
+                        "Accès anticipé nouvelles fonctions"
+                    ],
+                    cta: "Passer à Developer Pro",
+                    highlight: true,
+                    tag: "Meilleur ROI Agence",
+                    tier: "dev"
+                },
+                {
+                    name: "Developer Agency",
+                    price: "69,000 DA",
+                    period: "/ an",
+                    priceNote: "→ Revendez 10 × 9,900 DA = 99,000 DA",
+                    desc: "10 clients. Marges x2. La licence se paye seule à partir du 7ème client.",
+                    orderLimit: "450 commandes / mois / client",
+                    domains: "10 Clients / Domaines",
+                    profit: "~150,000 DA potentiel",
+                    features: [
+                        "10 licences clients incluses",
+                        "450 commandes/mois par client",
+                        "Toutes les fonctionnalités Starter",
+                        "Dashboard agence centralisé",
+                        "Account Manager dédié",
+                        "Accès bêta exclusif",
+                        "Formation équipe offerte"
+                    ],
+                    cta: "Choisir Agency",
+                    highlight: false,
+                    tier: "dev"
                 }
             ]
         },
@@ -198,7 +301,7 @@ export const content = {
         },
         ctaBanner: {
             title: "Prêt à transformer votre boutique COD ?",
-            subtitle: "Rejoignez 500+ vendeurs algériens qui ont multiplié leur ROAS par 4.",
+            subtitle: "22 transporteurs intégrés, 58 wilayas couvertes, 25 modules admin — tout ce qu'il vous faut pour dominer le COD en Algérie.",
             cta: "Commencer Maintenant",
             secondary: "Voir la Démo",
             trustItems: ["Installation en 5 minutes", "Support WhatsApp 24/7", "Satisfait ou Remboursé"]
@@ -225,14 +328,14 @@ export const content = {
             subheadline: "نموذج دفع سريع، تأكيد طلبات بالفريق، 22 شركة شحن و Server-Side CAPI — كل ما تحتاجه في إضافة WooCommerce واحدة.",
             cta: "ابدأ مجاناً",
             ctaSecondary: "شاهد العرض",
-            trustBadges: ["+500 متجر نشط", "22 شركة شحن", "دعم بالعربية والفرنسية"],
+            trustBadges: ["22 شركة شحن", "58 ولاية", "دعم بالعربية والفرنسية"],
         },
         socialProofStrip: {
             label: "يثقون بنا",
             stats: [
-                { value: "+500", label: "متجر نشط" },
-                { value: "+2M", label: "طلب ناجح" },
                 { value: "22", label: "شركة شحن مدمجة" },
+                { value: "58", label: "ولاية مغطاة" },
+                { value: "25", label: "وحدة إدارية" },
                 { value: "9/10", label: "جودة المطابقة" },
             ]
         },
@@ -290,32 +393,32 @@ export const content = {
             title: "البيانات بمستوى لم يعد يصله فيسبوك",
             subtitle: "Server-Side CAPI يتجاوز iOS 14+، مع تحليلات متقدمة وIA لقيادة حملاتك.",
             features: [
-                { title: "Server-Side CAPI", desc: "إرسال أحداث فيسبوك وتيك توك وسناب مباشرة من السيرفر. يتجاوز كل الحجب وiOS 14+." },
-                { title: "جودة مطابقة 9/10", desc: "تشفير SHA-256 تلقائي لبيانات العملاء لدقة استهداف قصوى." },
+                { title: "Server-Side CAPI", desc: "Facebook Graph API v24.0، TikTok Business API v1.3، Snapchat CAPI v2. مرسلة مباشرة من السيرفر — تتجاوز كل الحجب وiOS 14+." },
+                { title: "جودة مطابقة 9/10", desc: "تشفير SHA-256 لكل بيانات العملاء (هاتف، اسم، مدينة) لدقة استهداف قصوى." },
                 { title: "غرفة العمليات (War Room)", desc: "لوحة تحكم مركزية مع KPI في الوقت الفعلي، نسب التوصيل بالولاية وقمع المبيعات." },
                 { title: "مدقق الحملات بالذكاء الاصطناعي", desc: "خوارزمية تحلل ROAS والـCTR والتكرار مع توصيات عملية: SCALE أو KILL." },
-                { title: "خريطة الولايات التفاعلية", desc: "شاهد أداء التوصيل مقابل المرتجعات على خريطة تفاعلية للجزائر." },
+                { title: "خريطة الولايات التفاعلية", desc: "شاهد أداء التوصيل مقابل المرتجعات على خريطة تفاعلية للجزائر مع تكبير." },
             ]
         },
         securitySection: {
             eyebrow: "الأمان والحماية",
             title: "محصَّن ضد البوتات والاحتيال والتسريبات",
             items: [
-                { title: "تشفير AES-256", desc: "جميع بياناتك واتصالاتك مشفرة بمستوى عسكري." },
-                { title: "درع مضاد للبوتات", desc: "جدار حماية نشط يصفي البوتات عبر User-Agent والـIP. بياناتك تبقى نظيفة." },
-                { title: "التحقق من الهاتف", desc: "التحقق الفوري من أرقام الهاتف الجزائرية للقضاء على الطلبات الوهمية." },
-                { title: "القائمة السوداء للعملاء", desc: "حظر تلقائي للعملاء المحتالين بناءً على التاريخ والسلوك." },
-                { title: "كشف VPN والبروكسي", desc: "تحديد وتصفية الزيارات الاصطناعية من VPNs والبروكسيات." },
-                { title: "ترويسات CSP", desc: "Content Security Policy مهيأة تلقائياً لحماية متجرك." },
+                { title: "تشفير AES-256-CBC", desc: "جميع بياناتك واتصالاتك مشفرة بـ AES-256-CBC عبر مفاتيح WordPress (AUTH_KEY + SECURE_AUTH_KEY)." },
+                { title: "درع مضاد للبوتات (+20 توقيع)", desc: "جدار حماية نشط يصفي أكثر من 20 توقيع بوت معروفاً عبر User-Agent والـIP. بياناتك تبقى نظيفة." },
+                { title: "التحقق من الهاتف الجزائري", desc: "قواعد صارمة لأرقام 05/06/07 مع رفض الأرقام المتكررة للقضاء على الطلبات الوهمية." },
+                { title: "القائمة السوداء للعملاء", desc: "حظر عبر IP أو هاتف أو بريد إلكتروني عبر جدول dz_blacklist. إدارة كاملة من لوحة التحكم." },
+                { title: "كشف VPN والبروكسي", desc: "تحليل ترويسات HTTP لتحديد وتصفية الزيارات الاصطناعية من VPNs والبروكسيات." },
+                { title: "ترويسات CSP", desc: "Content-Security-Policy + X-Frame-Options + XSS Protection مهيأة تلقائياً لحماية متجرك." },
             ]
         },
         stats: {
-            title: "نتائج قابلة للقياس",
+            title: "أرقام حقيقية",
             items: [
-                { value: "4x", label: "متوسط عائد ROAS بعد التثبيت" },
-                { value: "-32%", label: "انخفاض تكلفة الاقتناء CPA" },
-                { value: "9/10", label: "جودة المطابقة" },
-                { value: "22", label: "شركة شحن مدمجة" }
+                { value: "22", label: "شركة شحن جزائرية مدمجة" },
+                { value: "58", label: "ولاية مغطاة (قاعدة بيانات كاملة)" },
+                { value: "25", label: "وحدة إدارية مستقلة" },
+                { value: "6", label: "تكاملات خارجية (FB, TikTok, Snap, Sheets, WA, Elementor)" }
             ]
         },
         testimonials: {
@@ -337,38 +440,141 @@ export const content = {
             ],
         },
         pricing: {
-            eyebrow: "الأسعار",
-            title: "استثمار وليس إيجاراً",
-            subtitle: "اختر الباقة المناسبة لحجم عملياتك.",
+            eyebrow: "الأسعار الرسمية",
+            title: "توقف عن الإنفاق على إعلانات عمياء. استثمر في البيانات.",
+            subtitle: "كل دينار تنفقه هنا يعود بأربعة دنانير. اختر حسب حجم عملياتك.",
+            merchantTitle: "باقات التاجر",
+            merchantSubtitle: "للمتاجر المنفردة — نطاق واحد، دخل مباشر.",
+            devTitle: "حزم المطور والوكالة",
+            devSubtitle: "اشتر بالجملة، أعد البيع لعملائك. كل حزمة تُسدد نفسها من أول عميل.",
             plans: [
                 {
-                    name: "الجندي",
-                    price: "14,900 دج",
+                    name: "Starter",
+                    price: "9,900 دج",
                     period: "/ سنوياً",
-                    desc: "مثالي للبائعين المنفردين المبتدئين.",
-                    features: ["نطاق واحد", "Checkout COD كامل", "تتبع Server-Side", "22 شركة شحن", "دعم أساسي"],
-                    cta: "ابدأ الآن",
-                    highlight: false
-                },
-                {
-                    name: "الفرقة",
-                    price: "59,000 دج",
-                    period: "/ سنوياً",
-                    desc: "للوكالات والعمليات متعددة المتاجر.",
-                    features: ["10 نطاقات", "دعم VIP", "إزالة الشعار", "إدارة العملاء", "وصول مبكر"],
-                    cta: "اختر الفرقة",
-                    highlight: true,
-                    tag: "الأكثر طلباً"
-                },
-                {
-                    name: "المملكة",
-                    price: "45,000 دج",
-                    period: "/ مرة واحدة",
-                    desc: "ادفع مرة واحدة، استخدم للأبد. بدون اشتراك.",
-                    features: ["نطاق واحد", "تحديثات مجانية للأبد", "بدون رسوم متكررة", "جميع الميزات"],
-                    cta: "دفعة واحدة",
+                    priceNote: "= 825 دج/شهرياً",
+                    desc: "للمبتدئين (~15 طلب/يوم). أرخص من يوم إعلان ضائع.",
+                    orderLimit: "450 طلب / شهر",
+                    domains: "نطاق واحد",
+                    features: [
+                        "نموذج دفع COD سريع",
+                        "Server-Side CAPI (فيسبوك + تيك توك + سناب)",
+                        "22 شركة شحن جزائرية",
+                        "مكتب تأكيد الطلبات",
+                        "تتبع تلقائي للتوصيل",
+                        "لوحة تحليلات",
+                        "حماية من البوتات والتحقق من الهاتف"
+                    ],
+                    cta: "ابدأ بـ Starter",
                     highlight: false,
-                    special: true
+                    tier: "merchant"
+                },
+                {
+                    name: "Growth",
+                    price: "19,000 دج",
+                    period: "/ سنوياً",
+                    priceNote: "= 1,583 دج/شهرياً",
+                    desc: "للمشغلين الجادين (~40 طلب/يوم). ROAS بـ 4x يغطي هذه الباقة خلال 3 أيام.",
+                    orderLimit: "1,300 طلب / شهر",
+                    domains: "نطاق واحد",
+                    features: [
+                        "كل ميزات Starter",
+                        "مدقق حملات بالذكاء الاصطناعي",
+                        "غرفة العمليات War Room",
+                        "خريطة الولايات التفاعلية",
+                        "إدارة العروض ورفع AOV",
+                        "مزامنة Google Sheets",
+                        "دعم واتساب أولوية"
+                    ],
+                    cta: "الترقية إلى Growth",
+                    highlight: true,
+                    tag: "الأكثر طلباً",
+                    tier: "merchant"
+                },
+                {
+                    name: "Pro",
+                    price: "34,000 دج",
+                    period: "/ سنوياً",
+                    priceNote: "= 2,833 دج/شهرياً",
+                    desc: "للأحجام الكبيرة (~130 طلب/يوم). عند هذا المستوى، الإضافة تموّل نفسها خلال أسبوع.",
+                    orderLimit: "4,000 طلب / شهر",
+                    domains: "نطاق واحد",
+                    features: [
+                        "كل ميزات Growth",
+                        "4,000 طلب / شهر",
+                        "Ghost Slicer — صفحات الهبوط",
+                        "النظام المالي وP&L",
+                        "أداء فريق Call Center",
+                        "تصدير بيانات متقدم",
+                        "دعم VIP مخصص"
+                    ],
+                    cta: "اختر Pro",
+                    highlight: false,
+                    tier: "merchant"
+                },
+                {
+                    name: "Developer Lite",
+                    price: "24,000 دج",
+                    period: "/ سنوياً",
+                    priceNote: "→ أعد البيع 3 × 9,900 = 29,700 دج",
+                    desc: "3 عملاء. استثمار 24K، عائد محتمل ~45,000 دج.",
+                    orderLimit: "450 طلب / شهر / عميل",
+                    domains: "3 عملاء / نطاقات",
+                    profit: "~45,000 دج محتملة",
+                    features: [
+                        "3 تراخيص عملاء",
+                        "450 طلب/شهر لكل عميل",
+                        "كل ميزات Starter",
+                        "لوحة وكالة مركزية",
+                        "دعم تقني مخصص"
+                    ],
+                    cta: "ابدأ بـ Developer Lite",
+                    highlight: false,
+                    tier: "dev"
+                },
+                {
+                    name: "Developer Pro",
+                    price: "39,000 دج",
+                    period: "/ سنوياً",
+                    priceNote: "→ أعد البيع 5 × 9,900 = 49,500 دج",
+                    desc: "5 عملاء. يُستهلك من العميل الرابع.",
+                    orderLimit: "450 طلب / شهر / عميل",
+                    domains: "5 عملاء / نطاقات",
+                    profit: "~75,000 دج محتملة",
+                    features: [
+                        "5 تراخيص عملاء",
+                        "450 طلب/شهر لكل عميل",
+                        "كل ميزات Starter",
+                        "لوحة وكالة مركزية",
+                        "دعم أولوية مخصص",
+                        "وصول مبكر للميزات"
+                    ],
+                    cta: "الترقية لـ Developer Pro",
+                    highlight: true,
+                    tag: "أفضل عائد للوكالة",
+                    tier: "dev"
+                },
+                {
+                    name: "Developer Agency",
+                    price: "69,000 دج",
+                    period: "/ سنوياً",
+                    priceNote: "→ أعد البيع 10 × 9,900 = 99,000 دج",
+                    desc: "10 عملاء. هامش ×2. الترخيص يدفع نفسه من العميل السابع.",
+                    orderLimit: "450 طلب / شهر / عميل",
+                    domains: "10 عملاء / نطاقات",
+                    profit: "~150,000 دج محتملة",
+                    features: [
+                        "10 تراخيص عملاء",
+                        "450 طلب/شهر لكل عميل",
+                        "كل ميزات Starter",
+                        "لوحة وكالة مركزية",
+                        "مدير حساب مخصص",
+                        "وصول بيتا حصري",
+                        "تدريب الفريق مجاناً"
+                    ],
+                    cta: "اختر Agency",
+                    highlight: false,
+                    tier: "dev"
                 }
             ]
         },
@@ -412,7 +618,7 @@ export const content = {
         },
         ctaBanner: {
             title: "مستعد لتحويل متجرك COD؟",
-            subtitle: "انضم لـ 500+ تاجر جزائري ضاعفوا ROAS بأربعة أضعاف.",
+            subtitle: "22 شركة شحن مدمجة، 58 ولاية مغطاة، 25 وحدة إدارية — كل ما تحتاجه للسيطرة على COD في الجزائر.",
             cta: "ابدأ الآن",
             secondary: "شاهد العرض",
             trustItems: ["تثبيت في 5 دقائق", "دعم واتساب 24/7", "ضمان الرضا أو استرداد المال"]

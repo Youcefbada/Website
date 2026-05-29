@@ -191,7 +191,7 @@ const Hero = ({ lang }) => {
                                     <TrendingUp size={16} className="text-green-600" />
                                 </div>
                                 <div>
-                                    <p className="text-[11px] text-text-muted font-medium leading-none mb-0.5">ROAS moyen</p>
+                                    <p className="text-[11px] text-text-muted font-medium leading-none mb-0.5">ROAS Moyen</p>
                                     <p className="text-sm font-bold text-text-dark leading-none">4x après install</p>
                                 </div>
                             </motion.div>

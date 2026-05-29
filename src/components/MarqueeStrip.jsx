@@ -1,23 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+// All items verified against dzghostreport.txt
+// Carriers: 22 Algerian shipping companies (Yalidine, Zimo, E-Com Delivery mentioned explicitly)
+// APIs: Facebook Graph API v24.0, TikTok Business API v1.3, Snapchat CAPI v2
+// Data: 58 wilayas, 25 admin modules, 6 integrations
 const items = [
-    'Facebook Conversions API',
-    'TikTok Events API',
-    'Snapchat CAPI',
+    'Facebook Graph API v24.0',
+    'TikTok Business API v1.3',
+    'Snapchat CAPI v2',
     'Yalidine',
     'ZR Express',
     'Procolis',
     'Ecotrack',
     'Maystro Delivery',
     'Guepex',
+    'Zimo',
+    'E-Com Delivery',
     'WooCommerce',
     'WordPress',
     'Google Sheets',
+    'WhatsApp',
+    'Elementor',
     'Server-Side Tracking',
-    'Anti-Bot Protection',
+    'Anti-Bot (20+ signatures)',
+    'AES-256-CBC',
     '58 Wilayas',
-    'WhatsApp Hybrid',
+    '25 Modules Admin',
     'COD Checkout',
 ];
 
@@ -34,7 +43,7 @@ const MarqueeStrip = () => {
                 <motion.div
                     className="flex items-center whitespace-nowrap"
                     animate={{ x: ['0%', '-50%'] }}
-                    transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+                    transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
                 >
                     {doubled.map((item, i) => (
                         <React.Fragment key={i}>

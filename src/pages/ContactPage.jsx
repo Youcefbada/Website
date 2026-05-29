@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, MessageCircle, Mail, Clock, Globe } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
-const WA_NUMBER = '213XXXXXXXXX';
+const WA_NUMBER = '213676917753';
 
 const copy = {
     fr: {

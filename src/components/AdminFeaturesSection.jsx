@@ -8,7 +8,8 @@ const featureIcons = [PhoneCall, Truck, RefreshCw, CheckCircle, FileSpreadsheet]
 const AdminFeaturesSection = ({ lang }) => {
     const t = content[lang].operationsSection;
 
-    const carriers = ['Yalidine', 'ZR Express', 'Procolis', 'Ecotrack', 'Maystro', 'Guepex', '+16'];
+    // Carriers verified against report: 22 Algerian companies
+    const carriers = ['Yalidine', 'ZR Express', 'Procolis', 'Ecotrack', 'Maystro', 'Guépex', 'Zimo', '+15'];
 
     return (
         <section className="py-20 sm:py-28 bg-white">
@@ -31,8 +32,8 @@ const AdminFeaturesSection = ({ lang }) => {
                         <div className="p-5 space-y-3">
                             {[
                                 { id: '#ORD-4821', city: 'Alger', status: 'Confirmée', color: 'text-green-600 bg-green-50 border-green-200' },
-                                { id: '#ORD-4822', city: 'Oran', status: 'En appel', color: 'text-yellow-600 bg-yellow-50 border-yellow-200' },
-                                { id: '#ORD-4823', city: 'Constantine', status: 'Nouvelle', color: 'text-blue-600 bg-blue-50 border-blue-200' },
+                                { id: '#ORD-4822', city: 'Oran', status: 'Appel 2', color: 'text-yellow-600 bg-yellow-50 border-yellow-200' },
+                                { id: '#ORD-4823', city: 'Constantine', status: 'Appel 1', color: 'text-blue-600 bg-blue-50 border-blue-200' },
                                 { id: '#ORD-4824', city: 'Annaba', status: 'Expédiée', color: 'text-violet-600 bg-violet-50 border-violet-200' },
                             ].map((order, i) => (
                                 <div key={i} className="flex items-center justify-between bg-bg-light rounded-lg px-4 py-3 border border-border">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const WA_NUMBER = '213XXXXXXXXX'; // Replace with real number
+const WA_NUMBER = '213676917753'; // Replace with real number
 
 const messages = {
     fr: 'Bonjour, je suis intéressé par DZ-Ghost. Pouvez-vous m\'aider ?',
